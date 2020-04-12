@@ -4,7 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/Beta-23/ilearnx.git",
   "author": "Al D",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
 }
-
-
