@@ -38,13 +38,14 @@ var template = React.createElement(
     )
 );
 
+var userName = 'Lee';
 var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Bryant Ko'
+        userName.toUpperCase()
     ),
     React.createElement(
         'p',
