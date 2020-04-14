@@ -22,21 +22,19 @@ var template = (
 var user = {
     name: 'Bryant',
     age: 24,
-    location: 'NYC'
+    location: 'L.A.'
 };
 
 function getLocation(location) {
     if (location) {
-        return location;
-    } else {
-        return 'Unknown';
-    }
+        return <p>Location: {location}</p>;
+    } console.log('no location found');
 }
 var templateTwo = (
     <div>
         <h1>{user.name}</h1>
         <p>Age: { user.age }</p>
-        <p>Location: {getLocation(user.location)}</p>
+        {getLocation(user.location)}
     </div>
 );
 
