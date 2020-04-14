@@ -4,37 +4,33 @@ console.log('App is loading...Testing babel');
 
 // JXS - JavaScript XML extensions
 
-var appTitle = 'iLearnx';
+var appObj = {
+    title: 'iLearnx App',
+    subtitle: 'What Should I learn next',
+    links: 'freecodecamp.org'
+};
+
 var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        appTitle
+        appObj.title
     ),
     React.createElement(
         'p',
         null,
-        'Testing'
+        appObj.subtitle,
+        ':'
     ),
     React.createElement(
-        'ol',
+        'ul',
         null,
         React.createElement(
             'li',
             null,
-            'Item One'
-        ),
-        React.createElement(
-            'li',
-            null,
-            'Item Two'
-        ),
-        React.createElement(
-            'li',
-            null,
-            'Item Three'
+            appObj.links
         )
     )
 );
@@ -69,4 +65,4 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
