@@ -13,8 +13,7 @@ var template = (
         <h1>{ appObj.title }</h1>
         <p>{ appObj.subtitle }:</p>
         <ul>
-            <li>{ appObj.links }</li>
-            
+            <li>{ appObj.links }</li> 
         </ul>
     </div>
 );
@@ -22,17 +21,24 @@ var template = (
 var user = {
     name: 'Bryant',
     age: 24,
-    location: 'NYC'
+    location: 'L.A.'
 };
 
+function getLocation(location) {
+    // check for user location conditional
+    if (location) {
+        return <p>Location: {location}</p>;
+    } 
+    // console.log('no location found');
+}
 var templateTwo = (
     <div>
         <h1>{user.name}</h1>
-        <p>Age: { user.agege }</p>
-        <p>Location: {user.location}</p>
+        <p>Age: { user.age }</p>
+        {getLocation(user.location)}
     </div>
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
