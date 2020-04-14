@@ -13,8 +13,7 @@ var template = (
         <h1>{ appObj.title }</h1>
         <p>{ appObj.subtitle }:</p>
         <ul>
-            <li>{ appObj.links }</li>
-            
+            <li>{ appObj.links }</li> 
         </ul>
     </div>
 );
@@ -26,9 +25,11 @@ var user = {
 };
 
 function getLocation(location) {
+    // check for user location conditional
     if (location) {
         return <p>Location: {location}</p>;
-    } console.log('no location found');
+    } 
+    // console.log('no location found');
 }
 var templateTwo = (
     <div>

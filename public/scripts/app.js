@@ -42,6 +42,7 @@ var user = {
 };
 
 function getLocation(location) {
+    // check for user location conditional
     if (location) {
         return React.createElement(
             'p',
@@ -49,7 +50,8 @@ function getLocation(location) {
             'Location: ',
             location
         );
-    }console.log('no location found');
+    }
+    // console.log('no location found');
 }
 var templateTwo = React.createElement(
     'div',
