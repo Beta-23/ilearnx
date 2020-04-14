@@ -4,13 +4,14 @@ console.log('App is loading...Testing babel');
 
 // JXS - JavaScript XML extensions
 
+var appTitle = 'iLearnx';
 var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'iLeanx'
+        appTitle
     ),
     React.createElement(
         'p',
@@ -38,9 +39,11 @@ var template = React.createElement(
     )
 );
 
-var userName = 'Lee';
-var userAge = 22;
-var userLocation = 'Philadelphia';
+var user = {
+    name: 'Bryant',
+    age: 24,
+    location: 'NYC'
+};
 
 var templateTwo = React.createElement(
     'div',
@@ -48,22 +51,19 @@ var templateTwo = React.createElement(
     React.createElement(
         'h1',
         null,
-        userName.toUpperCase(),
-        ' '
+        user.name
     ),
     React.createElement(
         'p',
         null,
         'Age: ',
-        userAge,
-        ' '
+        user.agege
     ),
     React.createElement(
         'p',
         null,
         'Location: ',
-        userLocation,
-        ' '
+        user.location
     )
 );
 

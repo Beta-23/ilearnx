@@ -2,9 +2,10 @@ console.log('App is loading...Testing babel');
 
 // JXS - JavaScript XML extensions
 
+var appTitle = 'iLearnx';
 var template = (
     <div>
-        <h1>iLeanx</h1>
+        <h1>{ appTitle }</h1>
         <p>Testing</p>
         <ol>
             <li>Item One</li>
@@ -14,15 +15,17 @@ var template = (
     </div>
 );
 
-var userName ='Lee';
-var userAge = 22;
-var userLocation = 'Philadelphia';
+var user = {
+    name: 'Bryant',
+    age: 24,
+    location: 'NYC'
+};
 
 var templateTwo = (
     <div>
-        <h1>{userName.toUpperCase()} </h1>
-        <p>Age: { userAge } </p>
-        <p>Location: {userLocation} </p>
+        <h1>{user.name}</h1>
+        <p>Age: { user.agege }</p>
+        <p>Location: {user.location}</p>
     </div>
 );
 
