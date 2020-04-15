@@ -6,8 +6,9 @@ console.log('App is loading...Testing babel');
 
 var appObj = {
     title: 'iLearnx App',
-    subtitle: 'What Should I learn next',
-    links: 'freecodecamp.org'
+    subtitle: 'What Should I learn next?',
+    options: ['freeCodeCamp']
+
 };
 
 var template = React.createElement(
@@ -18,10 +19,15 @@ var template = React.createElement(
         null,
         appObj.title
     ),
+    appObj.subtitle && React.createElement(
+        'p',
+        null,
+        appObj.subtitle
+    ),
     React.createElement(
         'p',
         null,
-        appObj.subtitle,
+        appObj.options.length > 0 ? 'Here are your options' : 'No Options',
         ':'
     ),
     React.createElement(
@@ -30,14 +36,14 @@ var template = React.createElement(
         React.createElement(
             'li',
             null,
-            appObj.links
+            appObj.options
         )
     )
 );
 
 var user = {
-
-    age: 24,
+    name: 'Bryant',
+    age: 26,
     location: 'L.A.'
 };
 
@@ -61,7 +67,7 @@ var templateTwo = React.createElement(
         null,
         user.name ? user.name : 'Anonymous'
     ),
-    React.createElement(
+    user.age && user.age >= 18 && React.createElement(
         'p',
         null,
         'Age: ',
@@ -72,4 +78,4 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
