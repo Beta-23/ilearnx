@@ -4,23 +4,26 @@ console.log('App is loading...Testing babel');
 
 var appObj = {
     title: 'iLearnx App',
-    subtitle: 'What Should I learn next',
-    links: 'freecodecamp.org'
+    subtitle: 'What Should I learn next?',
+    options: ['freeCodeCamp']
+    
 };
 
 var template = (
     <div>
         <h1>{ appObj.title }</h1>
-        <p>{ appObj.subtitle }:</p>
+        { appObj.subtitle && <p>{appObj.subtitle }</p>}
+        <p>{appObj.options.length > 0 ? 'Here are your options' : 'No Options'}:</p>
         <ul>
-            <li>{ appObj.links }</li> 
+            <li>{ appObj.options }</li> 
+            
         </ul>
     </div>
 );
 
 var user = {
-    
-    age: 24,
+    name: 'Bryant',
+    age: 26,
     location: 'L.A.'
 };
 
@@ -34,11 +37,11 @@ function getLocation(location) {
 var templateTwo = (
     <div>
         <h1>{user.name ? user.name : 'Anonymous'}</h1>
-        <p>Age: { user.age }</p>
+        {(user.age && user.age >= 18) && <p>Age: { user.age }</p>}
         {getLocation(user.location)}
     </div>
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
