@@ -1,21 +1,20 @@
-"use strict";
-
 // ES5
-var square = function square(x) {
+const square = function(x) {
     return x * x;
 };
 
 console.log(square(8));
 
 // ES6 arrow function
-var squareArrow = function squareArrow(x) {
+const squareArrow = (x) => {
     return x * x;
 };
 console.log(squareArrow(10));
 
 // ES6 implicit arrow function
-var squareArrow2 = function squareArrow2(x) {
-    return x * x;
-};
+const squareArrow2 = (x) => x * x;
 
 console.log(squareArrow2(9));
+
+
+
