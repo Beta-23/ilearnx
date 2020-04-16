@@ -7,7 +7,7 @@ console.log('App is loading...Testing babel');
 var appObj = {
     title: 'iLearnx App',
     subtitle: 'What Should I learn next?',
-    options: ['freeCodeCamp']
+    options: ['React']
 
 };
 
