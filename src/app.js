@@ -2,14 +2,14 @@ console.log('App is loading...Testing babel');
 
 // JXS - JavaScript XML extensions
 
-var appObj = {
+const appObj = {
     title: 'iLearnx App',
     subtitle: 'What Should I learn next?',
     options: ['React']
     
 };
 
-var template = (
+const template = (
     <div>
         <h1>{ appObj.title }</h1>
         { appObj.subtitle && <p>{appObj.subtitle }</p>}
@@ -21,7 +21,7 @@ var template = (
     </div>
 );
 
-var user = {
+const user = {
     name: 'Bryant',
     age: 26,
     location: 'L.A.'
@@ -34,7 +34,7 @@ function getLocation(location) {
     } 
     // console.log('no location found');
 }
-var templateTwo = (
+const templateTwo = (
     <div>
         <h1>{user.name ? user.name : 'Anonymous'}</h1>
         {(user.age && user.age >= 18) && <p>Age: { user.age }</p>}
@@ -42,6 +42,6 @@ var templateTwo = (
     </div>
 );
 
-var appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);

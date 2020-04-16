@@ -1,33 +1,81 @@
 'use strict';
 
-// Var Can be re-assigned and scoped to a function
-var nameVar = 'Bryant';
-var nameVar = 'Mike';
-console.log('Hi, ' + nameVar);
+console.log('App is loading...Testing babel');
 
-function getPetName() {
-    var petName = 'Larry';
-    return petName;
+// JXS - JavaScript XML extensions
+
+var appObj = {
+    title: 'iLearnx App',
+    subtitle: 'What Should I learn next?',
+    options: ['React']
+
+};
+
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        appObj.title
+    ),
+    appObj.subtitle && React.createElement(
+        'p',
+        null,
+        appObj.subtitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        appObj.options.length > 0 ? 'Here are your options' : 'No Options',
+        ':'
+    ),
+    React.createElement(
+        'ul',
+        null,
+        React.createElement(
+            'li',
+            null,
+            appObj.options
+        )
+    )
+);
+
+var user = {
+    name: 'Bryant',
+    age: 26,
+    location: 'L.A.'
+};
+
+function getLocation(location) {
+    // check for user location conditional
+    if (location) {
+        return React.createElement(
+            'p',
+            null,
+            'Location: ',
+            location
+        );
+    }
+    // console.log('no location found');
 }
-// petName is in the Global scope here
-var petName = getPetName();
-console.log(petName);
+var templateTwo = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        user.name ? user.name : 'Anonymous'
+    ),
+    user.age && user.age >= 18 && React.createElement(
+        'p',
+        null,
+        'Age: ',
+        user.age
+    ),
+    getLocation(user.location)
+);
 
-// Can't re-define a variable with let and const
-var nameLet = 'Jet';
-nameLet = 'Logan';
-console.log('Hi, ' + nameLet);
+var appRoot = document.getElementById('app');
 
-var nameConst = 'Ed';
-console.log('Hi, ' + nameConst);
-
-// Block scoping, prevent escape of variables (expect UUID to print twice)
-
-var fullName = 'UUID DID';
-var firstName = void 0;
-
-if (fullName) {
-    firstName = fullName.split(' ')[0];
-    console.log(firstName);
-}
-console.log(firstName);
+ReactDOM.render(template, appRoot);
