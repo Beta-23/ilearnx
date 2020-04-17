@@ -16,5 +16,17 @@ const squareArrow2 = (x) => x * x;
 
 console.log(squareArrow2(9));
 
+// Test arrow functions
+
+const getFirstName = (fullName) => {
+  return fullName.split(' ')[0];
+}
+console.log(getFirstName('Mike Lee'));
+
+// implicit arrow function
+const getFirstName2 = (fullName) => fullName.split(' ')[0];
+
+console.log(getFirstName2('LEE Ming'));
+
 
 
