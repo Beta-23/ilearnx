@@ -1,81 +1,35 @@
 'use strict';
 
-console.log('App is loading...Testing babel');
-
-// JXS - JavaScript XML extensions
-
-var appObj = {
-    title: 'iLearnx App',
-    subtitle: 'What Should I learn next?',
-    options: ['React']
-
+// ES5
+var square = function square(x) {
+    return x * x;
 };
 
-var template = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        appObj.title
-    ),
-    appObj.subtitle && React.createElement(
-        'p',
-        null,
-        appObj.subtitle
-    ),
-    React.createElement(
-        'p',
-        null,
-        appObj.options.length > 0 ? 'Here are your options' : 'No Options',
-        ':'
-    ),
-    React.createElement(
-        'ul',
-        null,
-        React.createElement(
-            'li',
-            null,
-            appObj.options
-        )
-    )
-);
+console.log(square(8));
 
-var user = {
-    name: 'Bryant',
-    age: 26,
-    location: 'L.A.'
+// ES6 arrow function
+var squareArrow = function squareArrow(x) {
+    return x * x;
+};
+console.log(squareArrow(10));
+
+// ES6 implicit arrow function
+var squareArrow2 = function squareArrow2(x) {
+    return x * x;
 };
 
-function getLocation(location) {
-    // check for user location conditional
-    if (location) {
-        return React.createElement(
-            'p',
-            null,
-            'Location: ',
-            location
-        );
-    }
-    // console.log('no location found');
-}
-var templateTwo = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        user.name ? user.name : 'Anonymous'
-    ),
-    user.age && user.age >= 18 && React.createElement(
-        'p',
-        null,
-        'Age: ',
-        user.age
-    ),
-    getLocation(user.location)
-);
+console.log(squareArrow2(9));
 
-var appRoot = document.getElementById('app');
+// Test arrow functions
 
-ReactDOM.render(template, appRoot);
+var getFirstName = function getFirstName(fullName) {
+    return fullName.split(' ')[0];
+};
+console.log(getFirstName('Mike Lee'));
+
+// implicit arrow function
+var getFirstName2 = function getFirstName2(fullName) {
+    return fullName.split(' ')[0];
+};
+
+console.log(getFirstName2('LEE Ming'));
