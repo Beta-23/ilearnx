@@ -17,10 +17,9 @@ var user = {
     printPlacesLived: function printPlacesLived() {
         var _this = this;
 
-        var cityMessages = this.cities.map(function (city) {
+        return this.cities.map(function (city) {
             return _this.name + ' has lived in ' + city;
         });
-        return cityMessages;
     }
 };
 // call the user object
