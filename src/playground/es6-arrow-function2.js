@@ -12,7 +12,7 @@ console.log(add(1,2));
 const user = {
     name: 'Jordan',
     cities: ['PA', 'NY', 'WA'],
-    printPlacesLived: function() {
+    printPlacesLived() {
         this.cities.forEach((city) => {
             console.log(this.name + ' has lived in ' + city);
         });   
