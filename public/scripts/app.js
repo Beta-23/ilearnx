@@ -17,10 +17,11 @@ var user = {
     printPlacesLived: function printPlacesLived() {
         var _this = this;
 
-        this.cities.forEach(function (city) {
-            console.log(_this.name + ' has lived in ' + city);
+        var cityMessages = this.cities.map(function (city) {
+            return _this.name + ' has lived in ' + city;
         });
+        return cityMessages;
     }
 };
 // call the user object
-user.printPlacesLived();
+console.log(user.printPlacesLived());
