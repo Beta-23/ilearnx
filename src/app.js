@@ -21,27 +21,16 @@ const template = (
     </div>
 );
 
-const user = {
-    name: 'Bryant',
-    age: 26,
-    location: 'L.A.'
-};
-
-function getLocation(location) {
-    // check for user location conditional
-    if (location) {
-        return <p>Location: {location}</p>;
-    } 
-    // console.log('no location found');
-}
+let count =0;
 const templateTwo = (
     <div>
-        <h1>{user.name ? user.name : 'Anonymous'}</h1>
-        {(user.age && user.age >= 18) && <p>Age: { user.age }</p>}
-        {getLocation(user.location)}
+        <h1>Count: {count}</h1>
+        <button id="my-id" className="button">+1</button>
     </div>
 );
 
+console.log(templateTwo);
+
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
