@@ -21,9 +21,9 @@ console.log(user.printPlacesLived());
 
 const multiplier = {
     numbers: [5, 8, 4],
-    multiplyBy: 2,
+    multiplyBy: 5,
     multiply() {
-        return this.numbers.map((answer) => this.multiplyBy * answer);
+        return this.numbers.map((newnum) => this.multiplyBy * newnum);
     }
 };
 
