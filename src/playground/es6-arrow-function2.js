@@ -13,9 +13,7 @@ const user = {
     name: 'Jordan',
     cities: ['PA', 'NY', 'WA'],
     printPlacesLived() {
-        return this.cities.map((city) => {
-            return this.name + ' has lived in ' + city;
-        }); 
+        return this.cities.map((city) => this.name + ' has lived in ' + city);
     }
 };
 // call the user object
