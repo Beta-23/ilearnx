@@ -18,3 +18,13 @@ const user = {
 };
 // call the user object
 console.log(user.printPlacesLived());
+
+const multiplier = {
+    numbers: [5, 8, 4],
+    multiplyBy: 2,
+    multiply() {
+        return this.numbers.map((answer) => this.multiplyBy * answer);
+    }
+};
+
+console.log(multiplier.multiply());

@@ -24,3 +24,17 @@ var user = {
 };
 // call the user object
 console.log(user.printPlacesLived());
+
+var multiplier = {
+    numbers: [5, 8, 4],
+    multiplyBy: 2,
+    multiply: function multiply() {
+        var _this2 = this;
+
+        return this.numbers.map(function (answer) {
+            return _this2.multiplyBy * answer;
+        });
+    }
+};
+
+console.log(multiplier.multiply());
