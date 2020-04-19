@@ -19,7 +19,7 @@ const user = {
 // call the user object
 console.log(user.printPlacesLived());
 
-const multiplier = { 
+const multiplier = {
     numbers: [5, 8, 4],
     multiplyBy: 5,
     multiply() {
