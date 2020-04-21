@@ -21,27 +21,5 @@ const template = (
     </div>
 );
 
-const user = {
-    name: 'Bryant',
-    age: 26,
-    location: 'L.A.'
-};
-
-function getLocation(location) {
-    // check for user location conditional
-    if (location) {
-        return <p>Location: {location}</p>;
-    } 
-    // console.log('no location found');
-}
-const templateTwo = (
-    <div>
-        <h1>{user.name ? user.name : 'Anonymous'}</h1>
-        {(user.age && user.age >= 18) && <p>Age: { user.age }</p>}
-        {getLocation(user.location)}
-    </div>
-);
-
 const appRoot = document.getElementById('app');
-
 ReactDOM.render(template, appRoot);
