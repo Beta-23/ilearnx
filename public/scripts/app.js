@@ -42,6 +42,9 @@ var template = React.createElement(
 );
 
 var count = 0;
+var addOne = function addOne() {
+    console.log('Listening to click event... ');
+};
 var templateTwo = React.createElement(
     'div',
     null,
@@ -53,7 +56,7 @@ var templateTwo = React.createElement(
     ),
     React.createElement(
         'button',
-        { id: 'my-id', className: 'button' },
+        { onClick: addOne },
         '+1'
     )
 );
