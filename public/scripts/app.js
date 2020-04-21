@@ -43,8 +43,17 @@ var template = React.createElement(
 
 var count = 0;
 var addOne = function addOne() {
-    console.log('Listening to click event... ');
+    console.log('OnClick...+1');
 };
+
+var minusOne = function minusOne() {
+    console.log('OnClick...-1');
+};
+
+var reSet = function reSet() {
+    console.log('onClick...clear counter');
+};
+
 var templateTwo = React.createElement(
     'div',
     null,
@@ -58,6 +67,18 @@ var templateTwo = React.createElement(
         'button',
         { onClick: addOne },
         '+1'
+    ),
+    React.createElement('br', null),
+    React.createElement('br', null),
+    React.createElement(
+        'button',
+        { onClick: minusOne },
+        '-1'
+    ),
+    React.createElement(
+        'button',
+        { onClick: reSet },
+        'Reset'
     )
 );
 

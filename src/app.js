@@ -23,12 +23,26 @@ const template = (
 
 let count =0;
 const addOne = ( ) => {
-    console.log('Listening to click event... ')
+    console.log('OnClick...+1');
 }
+
+const minusOne = () => {
+    console.log('OnClick...-1');
+}
+
+const reSet = () => {
+    console.log('onClick...clear counter');
+}
+
 const templateTwo = (
     <div>
         <h1>Count: {count}</h1>
         <button onClick={addOne}>+1</button>
+        <br />
+        <br />
+        <button onClick={minusOne}>-1</button>
+        <button onClick={reSet}>Reset</button>
+
     </div>
 );
 
