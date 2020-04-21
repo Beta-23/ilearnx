@@ -28,11 +28,13 @@ const addOne = ( ) => {
 }
 
 const minusOne = () => {
-    console.log('OnClick...-1');
+    count--;
+    renderCounterApp();
 }
 
 const reSet = () => {
-    console.log('onClick...clear counter');
+    count = 0;
+    renderCounterApp();
 }
 
 const appRoot = document.getElementById('app');

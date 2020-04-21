@@ -48,11 +48,13 @@ var addOne = function addOne() {
 };
 
 var minusOne = function minusOne() {
-    console.log('OnClick...-1');
+    count--;
+    renderCounterApp();
 };
 
 var reSet = function reSet() {
-    console.log('onClick...clear counter');
+    count = 0;
+    renderCounterApp();
 };
 
 var appRoot = document.getElementById('app');
