@@ -14,11 +14,11 @@ var appObj = {
 var onFormSubmit = function onFormSubmit(e) {
     e.preventDefault();
 
-    var option = e.traget.elements.option.value;
+    var option = e.target.elements.option.value;
 
     if (option) {
         appObj.options.push(option);
-        e.traget.elements.option.value = '';
+        e.target.elements.option.value = '';
     }
 };
 
@@ -47,7 +47,7 @@ var template = React.createElement(
         appObj.options.length
     ),
     React.createElement(
-        'ul',
+        'ol',
         null,
         React.createElement(
             'li',

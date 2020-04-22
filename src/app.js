@@ -11,14 +11,14 @@ const appObj = {
 
 const onFormSubmit = (e) => {
     e.preventDefault();
-
-    const option = e.traget.elements.option.value;
-
+  
+    const option = e.target.elements.option.value;
+  
     if (option) {
-        appObj.options.push(option);
-        e.traget.elements.option.value = '';
+      appObj.options.push(option);
+      e.target.elements.option.value = '';
     }
-};
+  };
 
 const template = (
     <div>
@@ -26,9 +26,9 @@ const template = (
         { appObj.subtitle && <p>{appObj.subtitle }</p>}
         <p>{appObj.options.length > 0 ? 'Here are your options' : 'No Options'}:</p>
         <p>{appObj.options.length}</p>
-        <ul>
+        <ol>
             <li>{ appObj.options }</li>   
-        </ul>
+        </ol>
 
         <form onSubmit={onFormSubmit}>
             <input type='text' name='option' />
