@@ -7,8 +7,19 @@ console.log('App is loading...Testing babel');
 var appObj = {
     title: 'iLearnx App',
     subtitle: 'What Should I learn next?',
-    options: ['React']
+    options: []
 
+};
+
+var onFormSubmit = function onFormSubmit(e) {
+    e.preventDefault();
+
+    var option = e.target.elements.option.value;
+
+    if (option) {
+        appObj.options.push(option);
+        e.target.elements.option.value = '';
+    }
 };
 
 var template = React.createElement(
@@ -31,12 +42,27 @@ var template = React.createElement(
         ':'
     ),
     React.createElement(
-        'ul',
+        'p',
+        null,
+        appObj.options.length
+    ),
+    React.createElement(
+        'ol',
         null,
         React.createElement(
             'li',
             null,
             appObj.options
+        )
+    ),
+    React.createElement(
+        'form',
+        { onSubmit: onFormSubmit },
+        React.createElement('input', { type: 'text', name: 'option' }),
+        React.createElement(
+            'button',
+            null,
+            'Add Your Course Choice'
         )
     )
 );
