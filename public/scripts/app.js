@@ -52,6 +52,7 @@ var render = function render() {
         React.createElement(
             'p',
             null,
+            'Cart: ',
             appObj.options.length
         ),
         React.createElement(

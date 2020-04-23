@@ -33,7 +33,7 @@ const render = () => {
             <h1>{ appObj.title }</h1>
             { appObj.subtitle && <p>{appObj.subtitle }</p>}
             <p>{appObj.options.length > 0 ? 'Here are your options' : 'No Options'}:</p>
-            <p>{appObj.options.length}</p>
+            <p>Cart: {appObj.options.length}</p>
             <button onClick={removeAll}>Remove All</button>
             <ul>
                 <li>Item One</li>  
