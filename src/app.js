@@ -18,20 +18,27 @@ const onFormSubmit = (e) => {
       e.target.elements.option.value = '';
       render();
     }
-  };
-  
-  const appRoot = document.getElementById('app');
+};
 
-  const render = () => {
+const removeAll = () => {
+    appObj.options = [];
+    render();
+}
+
+const appRoot = document.getElementById('app');
+
+const render = () => {
     const template = (
         <div>
             <h1>{ appObj.title }</h1>
             { appObj.subtitle && <p>{appObj.subtitle }</p>}
             <p>{appObj.options.length > 0 ? 'Here are your options' : 'No Options'}:</p>
             <p>{appObj.options.length}</p>
-            <ol>
-                <li>{ appObj.options }</li>   
-            </ol>
+            <button onClick={removeAll}>Remove All</button>
+            <ul>
+                <li>Item One</li>  
+                <li>Item Two</li> 
+            </ul>
     
             <form onSubmit={onFormSubmit}>
                 <input type='text' name='option' />
@@ -41,6 +48,5 @@ const onFormSubmit = (e) => {
     );
     ReactDOM.render(template, appRoot);
 }
-
 
 render();

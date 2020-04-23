@@ -22,6 +22,11 @@ var onFormSubmit = function onFormSubmit(e) {
     }
 };
 
+var removeAll = function removeAll() {
+    appObj.options = [];
+    render();
+};
+
 var appRoot = document.getElementById('app');
 
 var render = function render() {
@@ -50,12 +55,22 @@ var render = function render() {
             appObj.options.length
         ),
         React.createElement(
-            'ol',
+            'button',
+            { onClick: removeAll },
+            'Remove All'
+        ),
+        React.createElement(
+            'ul',
             null,
             React.createElement(
                 'li',
                 null,
-                appObj.options
+                'Item One'
+            ),
+            React.createElement(
+                'li',
+                null,
+                'Item Two'
             )
         ),
         React.createElement(
