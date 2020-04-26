@@ -37,9 +37,7 @@ const render = () => {
             <ol>
             {/*map over appObj.options getting back an array of list */}
             {
-                appObj.options.map((option) => {
-                    return <li key={option}>{option}</li>;
-                })
+                appObj.options.map((option) => <li key={option}>{option}</li>)
             }    
             </ol>
     
