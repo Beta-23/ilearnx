@@ -50,29 +50,15 @@ var render = function render() {
             ':'
         ),
         React.createElement(
-            'p',
+            'ol',
             null,
-            'Cart: ',
-            appObj.options.length
-        ),
-        React.createElement(
-            'button',
-            { onClick: removeAll },
-            'Remove All'
-        ),
-        React.createElement(
-            'ul',
-            null,
-            React.createElement(
-                'li',
-                null,
-                'Item One'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Item Two'
-            )
+            appObj.options.map(function (option) {
+                return React.createElement(
+                    'li',
+                    { key: option },
+                    option
+                );
+            })
         ),
         React.createElement(
             'form',
@@ -82,7 +68,18 @@ var render = function render() {
                 'button',
                 null,
                 'Add Your Course Choice'
+            ),
+            React.createElement(
+                'button',
+                { onClick: removeAll },
+                'Remove All'
             )
+        ),
+        React.createElement(
+            'p',
+            null,
+            'Cart: ',
+            appObj.options.length
         )
     );
     ReactDOM.render(template, appRoot);

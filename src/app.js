@@ -27,23 +27,26 @@ const removeAll = () => {
 
 const appRoot = document.getElementById('app');
 
+
 const render = () => {
     const template = (
         <div>
             <h1>{ appObj.title }</h1>
             { appObj.subtitle && <p>{appObj.subtitle }</p>}
             <p>{appObj.options.length > 0 ? 'Here are your options' : 'No Options'}:</p>
-            <p>Cart: {appObj.options.length}</p>
-            <button onClick={removeAll}>Remove All</button>
-            <ul>
-                <li>Item One</li>  
-                <li>Item Two</li> 
-            </ul>
+            <ol>
+            {/*map over appObj.options getting back an array of list */}
+            {
+                appObj.options.map((option) => <li key={option}>{option}</li>)
+            }    
+            </ol>
     
             <form onSubmit={onFormSubmit}>
                 <input type='text' name='option' />
                 <button>Add Your Course Choice</button>
+                <button onClick={removeAll}>Remove All</button>
             </form>
+            <p>Cart: {appObj.options.length}</p>
         </div>
     );
     ReactDOM.render(template, appRoot);
