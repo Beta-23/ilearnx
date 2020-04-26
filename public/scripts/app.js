@@ -29,8 +29,6 @@ var removeAll = function removeAll() {
 
 var appRoot = document.getElementById('app');
 
-var numbers = [55, 45, 67];
-
 var render = function render() {
     var template = React.createElement(
         'div',
@@ -52,37 +50,16 @@ var render = function render() {
             ':'
         ),
         React.createElement(
-            'p',
-            null,
-            'Cart: ',
-            appObj.options.length
-        ),
-        React.createElement(
-            'button',
-            { onClick: removeAll },
-            'Remove All'
-        ),
-        numbers.map(function (number) {
-            return React.createElement(
-                'p',
-                { key: number },
-                'number: ',
-                number
-            );
-        }),
-        React.createElement(
             'ol',
             null,
-            React.createElement(
-                'li',
-                null,
-                'Item One'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Item Two'
-            )
+            appObj.options.map(function (option) {
+                return React.createElement(
+                    'p',
+                    { key: option },
+                    'Your Choice: ',
+                    option
+                );
+            })
         ),
         React.createElement(
             'form',
@@ -93,6 +70,17 @@ var render = function render() {
                 null,
                 'Add Your Course Choice'
             )
+        ),
+        React.createElement(
+            'p',
+            null,
+            'Cart: ',
+            appObj.options.length
+        ),
+        React.createElement(
+            'button',
+            { onClick: removeAll },
+            'Remove All'
         )
     );
     ReactDOM.render(template, appRoot);
