@@ -38,7 +38,7 @@ const render = () => {
             {/*map over appObj.options getting back an array of list */}
             {
                 appObj.options.map((option) => {
-                    return <p key={option}>Your Choice: {option}</p>;
+                    return <li key={option}>{option}</li>;
                 })
             }    
             </ol>
@@ -46,9 +46,9 @@ const render = () => {
             <form onSubmit={onFormSubmit}>
                 <input type='text' name='option' />
                 <button>Add Your Course Choice</button>
+                <button onClick={removeAll}>Remove All</button>
             </form>
             <p>Cart: {appObj.options.length}</p>
-            <button onClick={removeAll}>Remove All</button>
         </div>
     );
     ReactDOM.render(template, appRoot);

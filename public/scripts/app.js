@@ -54,9 +54,8 @@ var render = function render() {
             null,
             appObj.options.map(function (option) {
                 return React.createElement(
-                    'p',
+                    'li',
                     { key: option },
-                    'Your Choice: ',
                     option
                 );
             })
@@ -69,6 +68,11 @@ var render = function render() {
                 'button',
                 null,
                 'Add Your Course Choice'
+            ),
+            React.createElement(
+                'button',
+                { onClick: removeAll },
+                'Remove All'
             )
         ),
         React.createElement(
@@ -76,11 +80,6 @@ var render = function render() {
             null,
             'Cart: ',
             appObj.options.length
-        ),
-        React.createElement(
-            'button',
-            { onClick: removeAll },
-            'Remove All'
         )
     );
     ReactDOM.render(template, appRoot);
