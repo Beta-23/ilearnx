@@ -29,6 +29,8 @@ var removeAll = function removeAll() {
 
 var appRoot = document.getElementById('app');
 
+var numbers = [55, 45, 67];
+
 var render = function render() {
     var template = React.createElement(
         'div',
@@ -60,8 +62,16 @@ var render = function render() {
             { onClick: removeAll },
             'Remove All'
         ),
+        numbers.map(function (number) {
+            return React.createElement(
+                'p',
+                { key: number },
+                'number: ',
+                number
+            );
+        }),
         React.createElement(
-            'ul',
+            'ol',
             null,
             React.createElement(
                 'li',
