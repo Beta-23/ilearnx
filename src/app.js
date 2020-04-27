@@ -23,7 +23,14 @@ const onFormSubmit = (e) => {
 const removeAll = () => {
     appObj.options = [];
     render();
-}
+};
+
+const onMakeDecision = () => {
+    const randomNum = Math.floor(Math.random() * appObj.options.length);
+    const option = appObj.options[randomNum];
+    alert(option);
+    console.log(`random index option: ${randomNum}`);
+};
 
 const appRoot = document.getElementById('app');
 
@@ -33,6 +40,7 @@ const render = () => {
         <div>
             <h1>{ appObj.title }</h1>
             { appObj.subtitle && <p>{appObj.subtitle }</p>}
+            <button disabled={appObj.options.length === 0} onClick={onMakeDecision}>What course should I take?</button>
             <p>{appObj.options.length > 0 ? 'Here are your options' : 'No Options'}:</p>
             <ol>
             {/*map over appObj.options getting back an array of list */}
@@ -46,7 +54,6 @@ const render = () => {
                 <button>Add Your Course Choice</button>
                 <button onClick={removeAll}>Remove All</button>
             </form>
-            <p>Cart: {appObj.options.length}</p>
         </div>
     );
     ReactDOM.render(template, appRoot);

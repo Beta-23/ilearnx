@@ -27,6 +27,13 @@ var removeAll = function removeAll() {
     render();
 };
 
+var onMakeDecision = function onMakeDecision() {
+    var randomNum = Math.floor(Math.random() * appObj.options.length);
+    var option = appObj.options[randomNum];
+    alert(option);
+    console.log('random index option: ' + randomNum);
+};
+
 var appRoot = document.getElementById('app');
 
 var render = function render() {
@@ -42,6 +49,11 @@ var render = function render() {
             'p',
             null,
             appObj.subtitle
+        ),
+        React.createElement(
+            'button',
+            { disabled: appObj.options.length === 0, onClick: onMakeDecision },
+            'What course should I take?'
         ),
         React.createElement(
             'p',
@@ -74,12 +86,6 @@ var render = function render() {
                 { onClick: removeAll },
                 'Remove All'
             )
-        ),
-        React.createElement(
-            'p',
-            null,
-            'Cart: ',
-            appObj.options.length
         )
     );
     ReactDOM.render(template, appRoot);
