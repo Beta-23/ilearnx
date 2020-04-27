@@ -52,7 +52,7 @@ const render = () => {
             <form onSubmit={onFormSubmit}>
                 <input type='text' name='option' />
                 <button>Add Your Course Choice</button>
-                <button onClick={removeAll}>Remove All</button>
+                <button disabled={appObj.options.length === 0} onClick={removeAll}>Remove All</button>
             </form>
         </div>
     );

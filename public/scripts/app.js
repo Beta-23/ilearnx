@@ -83,7 +83,7 @@ var render = function render() {
             ),
             React.createElement(
                 'button',
-                { onClick: removeAll },
+                { disabled: appObj.options.length === 0, onClick: removeAll },
                 'Remove All'
             )
         )
