@@ -26,8 +26,8 @@ const removeAll = () => {
 };
 
 const onMakeDecision = () => {
-    const randomNum = Math.random();
-    console.log(randomNum);
+    const randomNum = Math.floor(Math.random() * appObj.options.length);
+    console.log(`here is a random num: ${randomNum}`);
 };
 
 const appRoot = document.getElementById('app');
@@ -38,6 +38,7 @@ const render = () => {
         <div>
             <h1>{ appObj.title }</h1>
             { appObj.subtitle && <p>{appObj.subtitle }</p>}
+            <button onClick={onMakeDecision}>What course should I take?</button>
             <p>{appObj.options.length > 0 ? 'Here are your options' : 'No Options'}:</p>
             <ol>
             {/*map over appObj.options getting back an array of list */}
@@ -50,7 +51,6 @@ const render = () => {
                 <input type='text' name='option' />
                 <button>Add Your Course Choice</button>
                 <button onClick={removeAll}>Remove All</button>
-                <button onClick={onMakeDecision}>What course should I take?</button>
             </form>
         </div>
     );

@@ -28,8 +28,8 @@ var removeAll = function removeAll() {
 };
 
 var onMakeDecision = function onMakeDecision() {
-    var randomNum = Math.random();
-    console.log(randomNum);
+    var randomNum = Math.floor(Math.random() * appObj.options.length);
+    console.log('here is a random num: ' + randomNum);
 };
 
 var appRoot = document.getElementById('app');
@@ -47,6 +47,11 @@ var render = function render() {
             'p',
             null,
             appObj.subtitle
+        ),
+        React.createElement(
+            'button',
+            { onClick: onMakeDecision },
+            'What course should I take?'
         ),
         React.createElement(
             'p',
@@ -78,11 +83,6 @@ var render = function render() {
                 'button',
                 { onClick: removeAll },
                 'Remove All'
-            ),
-            React.createElement(
-                'button',
-                { onClick: onMakeDecision },
-                'What course should I take?'
             )
         )
     );
