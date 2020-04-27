@@ -29,7 +29,9 @@ var removeAll = function removeAll() {
 
 var onMakeDecision = function onMakeDecision() {
     var randomNum = Math.floor(Math.random() * appObj.options.length);
-    console.log('here is a random num: ' + randomNum);
+    var option = appObj.options[randomNum];
+    alert(option);
+    console.log('random index option: ' + randomNum);
 };
 
 var appRoot = document.getElementById('app');
@@ -50,7 +52,7 @@ var render = function render() {
         ),
         React.createElement(
             'button',
-            { onClick: onMakeDecision },
+            { disabled: appObj.options.length === 0, onClick: onMakeDecision },
             'What course should I take?'
         ),
         React.createElement(
