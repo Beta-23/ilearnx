@@ -27,6 +27,11 @@ var removeAll = function removeAll() {
     render();
 };
 
+var onMakeDecision = function onMakeDecision() {
+    var randomNum = Math.random();
+    console.log(randomNum);
+};
+
 var appRoot = document.getElementById('app');
 
 var render = function render() {
@@ -73,13 +78,12 @@ var render = function render() {
                 'button',
                 { onClick: removeAll },
                 'Remove All'
+            ),
+            React.createElement(
+                'button',
+                { onClick: onMakeDecision },
+                'What course should I take?'
             )
-        ),
-        React.createElement(
-            'p',
-            null,
-            'Cart: ',
-            appObj.options.length
         )
     );
     ReactDOM.render(template, appRoot);

@@ -23,7 +23,12 @@ const onFormSubmit = (e) => {
 const removeAll = () => {
     appObj.options = [];
     render();
-}
+};
+
+const onMakeDecision = () => {
+    const randomNum = Math.random();
+    console.log(randomNum);
+};
 
 const appRoot = document.getElementById('app');
 
@@ -45,8 +50,8 @@ const render = () => {
                 <input type='text' name='option' />
                 <button>Add Your Course Choice</button>
                 <button onClick={removeAll}>Remove All</button>
+                <button onClick={onMakeDecision}>What course should I take?</button>
             </form>
-            <p>Cart: {appObj.options.length}</p>
         </div>
     );
     ReactDOM.render(template, appRoot);
