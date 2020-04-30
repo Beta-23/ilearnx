@@ -2,7 +2,7 @@ console.log('App is loading...Testing babel');
 
 // JXS - JavaScript XML extensions
 
-const appObj = {
+const app = {
     title: 'iLearnx App',
     subtitle: 'What Should I learn next?',
     options: []
@@ -14,20 +14,20 @@ const onFormSubmit = (e) => {
     const option = e.target.elements.option.value;
   
     if (option) {
-      appObj.options.push(option);
+      app.options.push(option);
       e.target.elements.option.value = '';
       render();
     }
 };
 
 const removeAll = () => {
-    appObj.options = [];
+    app.options = [];
     render();
 };
 
 const onMakeDecision = () => {
-    const randomNum = Math.floor(Math.random() * appObj.options.length);
-    const option = appObj.options[randomNum];
+    const randomNum = Math.floor(Math.random() * app.options.length);
+    const option = app.options[randomNum];
     alert(option);
     console.log(`random index option: ${randomNum}`);
 };
@@ -38,21 +38,21 @@ const appRoot = document.getElementById('app');
 const render = () => {
     const template = (
         <div>
-            <h1>{ appObj.title }</h1>
-            { appObj.subtitle && <p>{appObj.subtitle }</p>}
-            <button disabled={appObj.options.length === 0} onClick={onMakeDecision}>What course should I take?</button>
-            <p>{appObj.options.length > 0 ? 'Here are your options' : 'No Options'}:</p>
+            <h1>{ app.title }</h1>
+            { app.subtitle && <p>{app.subtitle }</p>}
+            <button disabled={app.options.length === 0} onClick={onMakeDecision}>What course should I take?</button>
+            <p>{app.options.length > 0 ? 'Here are your options' : 'No Options'}:</p>
             <ol>
-            {/*map over appObj.options getting back an array of list */}
+            {/*map over app.options getting back an array of list */}
             {
-                appObj.options.map((option) => <li key={option}>{option}</li>)
+                app.options.map((option) => <li key={option}>{option}</li>)
             }    
             </ol>
     
             <form onSubmit={onFormSubmit}>
                 <input type='text' name='option' />
                 <button>Add Your Course Choice</button>
-                <button disabled={appObj.options.length === 0} onClick={removeAll}>Remove All</button>
+                <button disabled={app.options.length === 0} onClick={removeAll}>Remove All</button>
             </form>
         </div>
     );
