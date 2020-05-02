@@ -3,7 +3,7 @@ class Person {
         this.name = name;
     }
     getGreeting() {
-        return ' Hi ' + this.name + '!';
+        return `Hi I am ${this.name}!`;
     }
 }
 
