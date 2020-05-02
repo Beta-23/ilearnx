@@ -9,10 +9,19 @@ class Person {
     getDescription() {
         return `Hi, this is ${this.name} and I am ${this.age} years old`;
     }
+}  
+
+// subclass of the Person class  
+class Student extends Person {
+    constructor(name, age, major) {
+        super(name, age);
+        this.major = major;
+    }
 }
 
-const me = new Person('Andi Ann', 26);
-console.log(me.getDescription());
 
-const other = new Person();
+const me = new Student('Andi Ann', 26, 'Computer Science');
+console.log(me);
+
+const other = new Student();
 console.log(other.getDescription());
