@@ -31,7 +31,7 @@ var Header = function (_React$Component) {
                 React.createElement(
                     'h2',
                     null,
-                    'Let an al\xB7go\xB7rithm show you a learning path!'
+                    'Let an al\xB7go\xB7rithm show your learning path!'
                 )
             );
         }
@@ -70,12 +70,8 @@ var Action = function (_React$Component2) {
 var jsx = React.createElement(
     'div',
     null,
-    React.createElement(
-        'h1',
-        null,
-        'Title'
-    ),
-    React.createElement(Header, null)
+    React.createElement(Header, null),
+    React.createElement(Action, null)
 );
 
 ReactDOM.render(jsx, document.getElementById('app'));
