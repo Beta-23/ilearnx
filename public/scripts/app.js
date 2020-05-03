@@ -73,13 +73,15 @@ var Student = function (_Person) {
   return Student;
 }(Person);
 
-var me = new Student('Andi Ann', 26, 'Computer Science');
-console.log(me.getDescription());
+// Test the Student class instances
+// const me = new Student('Andi Ann', 26, 'Computer Science');
+// console.log(me.getDescription());
 
-var other = new Student();
-console.log(other.getDescription());
+// const other = new Student();
+// console.log(other.getDescription());
 
 //subclass Traveler of the Person Class
+
 
 var Traveler = function (_Person2) {
   _inherits(Traveler, _Person2);
@@ -98,10 +100,19 @@ var Traveler = function (_Person2) {
     value: function getHomeLocation() {
       var location = _get(Traveler.prototype.__proto__ || Object.getPrototypeOf(Traveler.prototype), 'getGreeting', this).call(this);
       if (this.homeLocation) {
-        location += ' I\'m visiting from ' + this.homeLocation;
-      }return location;
+        location += ' I\'m visiting from ' + this.homeLocation + '.';
+      }
+      return location;
     }
   }]);
 
   return Traveler;
 }(Person);
+
+// Test the Traveler class instances
+
+
+var me = new Traveler('Andi Ann', 26, 'Portland');
+console.log(me.getHomeLocation());
+var other = new Traveler(undefined, undefined, 'anonymous location');
+console.log(other.getHomeLocation());
