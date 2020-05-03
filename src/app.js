@@ -1,6 +1,21 @@
 class Header extends React.Component {
     render() {
-        return <h1>HEADER</h1>
+        return (
+            <div>
+                <h1>iLearnx App</h1>
+                <h2>Let an al·go·rithm show you a learning path!</h2>
+            </div>
+        );
+    }
+}
+
+class Action extends React.Component {
+    render() {
+        return (
+            <div>
+                <button>What langueage should I learn?</button>
+            </div>
+        );
     }
 }
 

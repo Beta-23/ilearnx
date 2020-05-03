@@ -21,14 +21,50 @@ var Header = function (_React$Component) {
         key: 'render',
         value: function render() {
             return React.createElement(
-                'h1',
+                'div',
                 null,
-                'HEADER'
+                React.createElement(
+                    'h1',
+                    null,
+                    'iLearnx App'
+                ),
+                React.createElement(
+                    'h2',
+                    null,
+                    'Let an al\xB7go\xB7rithm show you a learning path!'
+                )
             );
         }
     }]);
 
     return Header;
+}(React.Component);
+
+var Action = function (_React$Component2) {
+    _inherits(Action, _React$Component2);
+
+    function Action() {
+        _classCallCheck(this, Action);
+
+        return _possibleConstructorReturn(this, (Action.__proto__ || Object.getPrototypeOf(Action)).apply(this, arguments));
+    }
+
+    _createClass(Action, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    'button',
+                    null,
+                    'What langueage should I learn?'
+                )
+            );
+        }
+    }]);
+
+    return Action;
 }(React.Component);
 
 var jsx = React.createElement(
