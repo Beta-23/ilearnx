@@ -26,10 +26,20 @@ class Options extends React.Component {
         };
         return (
             <div>
-                <p>Your Options:</p>
+                <h3>Your Options:</h3>
                 {app.options[0]}
                 <p>{ app.options[1]}</p>
                 <p>{ app.options[2]}</p>
+            </div>
+        );
+    }
+}
+
+class AddOptions extends React.Component {
+    render() {
+        return (
+            <div>
+                <button>Add Your Langueage Choices</button>
             </div>
         );
     }
@@ -40,6 +50,7 @@ const jsx = (
         <Header />
         <Action />
         <Options />
+        <AddOptions />
     </div>
 );
 

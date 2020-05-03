@@ -86,7 +86,7 @@ var Options = function (_React$Component3) {
                 'div',
                 null,
                 React.createElement(
-                    'p',
+                    'h3',
                     null,
                     'Your Options:'
                 ),
@@ -108,12 +108,40 @@ var Options = function (_React$Component3) {
     return Options;
 }(React.Component);
 
+var AddOptions = function (_React$Component4) {
+    _inherits(AddOptions, _React$Component4);
+
+    function AddOptions() {
+        _classCallCheck(this, AddOptions);
+
+        return _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).apply(this, arguments));
+    }
+
+    _createClass(AddOptions, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    'button',
+                    null,
+                    'Add Your Langueage Choices'
+                )
+            );
+        }
+    }]);
+
+    return AddOptions;
+}(React.Component);
+
 var jsx = React.createElement(
     'div',
     null,
     React.createElement(Header, null),
     React.createElement(Action, null),
-    React.createElement(Options, null)
+    React.createElement(Options, null),
+    React.createElement(AddOptions, null)
 );
 
 ReactDOM.render(jsx, document.getElementById('app'));
