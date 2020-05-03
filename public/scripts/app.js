@@ -32,7 +32,7 @@ var Header = function (_React$Component) {
 }(React.Component);
 
 var jsx = React.createElement(
-    'di',
+    'div',
     null,
     React.createElement(
         'h1',

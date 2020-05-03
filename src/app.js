@@ -5,10 +5,10 @@ class Header extends React.Component {
 }
 
 const jsx = (
-    <di>
+    <div>
         <h1>Title</h1>
         <Header />
-    </di>
+    </div>
 );
 
 ReactDOM.render(jsx, document.getElementById('app'));
