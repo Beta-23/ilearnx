@@ -9,9 +9,9 @@ class Person {
     getDescription() {
       return `${this.name} is ${this.age} year(s) old.`;
     }
-  }
-  // subclass of the Person class 
-  class Student extends Person {
+}
+  // subclass Student of the Person Class 
+class Student extends Person {
     constructor(name, age, major) {
       super(name, age);
       this.major = major;
@@ -29,11 +29,23 @@ class Person {
   
       return description;
     }
-  }
-
+}
 
 const me = new Student('Andi Ann', 26, 'Computer Science');
 console.log(me.getDescription());
 
 const other = new Student();
 console.log(other.getDescription());
+
+//subclass Traveler of the Person Class
+class Traveler extends Person { 
+    constructor (name, age, homeLocation) { 
+        super(name, age); 
+        this.homeLocation = homeLocation; 
+    }
+ getHomeLocation() { 
+     let location = super.getGreeting();
+ if (this.homeLocation) { 
+     location += ` I'm visiting from ${this.homeLocation}`; } return location; 
+    }
+}

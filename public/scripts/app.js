@@ -35,7 +35,7 @@ var Person = function () {
 
   return Person;
 }();
-// subclass of the Person class 
+// subclass Student of the Person Class 
 
 
 var Student = function (_Person) {
@@ -78,3 +78,30 @@ console.log(me.getDescription());
 
 var other = new Student();
 console.log(other.getDescription());
+
+//subclass Traveler of the Person Class
+
+var Traveler = function (_Person2) {
+  _inherits(Traveler, _Person2);
+
+  function Traveler(name, age, homeLocation) {
+    _classCallCheck(this, Traveler);
+
+    var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this, name, age));
+
+    _this2.homeLocation = homeLocation;
+    return _this2;
+  }
+
+  _createClass(Traveler, [{
+    key: 'getHomeLocation',
+    value: function getHomeLocation() {
+      var location = _get(Traveler.prototype.__proto__ || Object.getPrototypeOf(Traveler.prototype), 'getGreeting', this).call(this);
+      if (this.homeLocation) {
+        location += ' I\'m visiting from ' + this.homeLocation;
+      }return location;
+    }
+  }]);
+
+  return Traveler;
+}(Person);
