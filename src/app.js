@@ -39,13 +39,13 @@ class AddOptions extends React.Component {
     render() {
         return (
             <div>
-                <button>Add Your Langueage Choices</button>
+                <button>Add Your Langueage Choice</button>
             </div>
         );
     }
 }
 
-const jsx = (
+const appJsx = (
     <div>
         <Header />
         <Action />
@@ -54,4 +54,4 @@ const jsx = (
     </div>
 );
 
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(appJsx, document.getElementById('app'));

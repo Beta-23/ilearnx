@@ -126,7 +126,7 @@ var AddOptions = function (_React$Component4) {
                 React.createElement(
                     'button',
                     null,
-                    'Add Your Langueage Choices'
+                    'Add Your Langueage Choice'
                 )
             );
         }
@@ -135,7 +135,7 @@ var AddOptions = function (_React$Component4) {
     return AddOptions;
 }(React.Component);
 
-var jsx = React.createElement(
+var appJsx = React.createElement(
     'div',
     null,
     React.createElement(Header, null),
@@ -144,4 +144,4 @@ var jsx = React.createElement(
     React.createElement(AddOptions, null)
 );
 
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(appJsx, document.getElementById('app'));
