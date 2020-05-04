@@ -26,6 +26,7 @@ var IlearnxApp = function (_React$Component) {
                 React.createElement(Header, null),
                 React.createElement(Action, null),
                 React.createElement(Options, null),
+                React.createElement('br', null),
                 React.createElement(AddOptions, null)
             );
         }
@@ -111,11 +112,7 @@ var Options = function (_React$Component4) {
             return React.createElement(
                 'div',
                 null,
-                React.createElement(
-                    'h3',
-                    null,
-                    'Your Options:'
-                ),
+                React.createElement(Option, null),
                 app.options[0],
                 React.createElement(
                     'p',
@@ -134,8 +131,35 @@ var Options = function (_React$Component4) {
     return Options;
 }(React.Component);
 
-var AddOptions = function (_React$Component5) {
-    _inherits(AddOptions, _React$Component5);
+var Option = function (_React$Component5) {
+    _inherits(Option, _React$Component5);
+
+    function Option() {
+        _classCallCheck(this, Option);
+
+        return _possibleConstructorReturn(this, (Option.__proto__ || Object.getPrototypeOf(Option)).apply(this, arguments));
+    }
+
+    _createClass(Option, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    'button',
+                    null,
+                    'Your Options:'
+                )
+            );
+        }
+    }]);
+
+    return Option;
+}(React.Component);
+
+var AddOptions = function (_React$Component6) {
+    _inherits(AddOptions, _React$Component6);
 
     function AddOptions() {
         _classCallCheck(this, AddOptions);

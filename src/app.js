@@ -5,6 +5,7 @@ class IlearnxApp extends React.Component {
                 <Header />
                 <Action />
                 <Options />
+                <br />
                 <AddOptions />
             </div>
         );
@@ -39,10 +40,20 @@ class Options extends React.Component {
         };
         return (
             <div>
-                <h3>Your Options:</h3>
+                <Option />
                 {app.options[0]}
                 <p>{ app.options[1]}</p>
                 <p>{ app.options[2]}</p>
+            </div>
+        );
+    }
+}
+
+class Option extends React.Component {
+    render() {
+        return (
+            <div>
+                <button>Your Options:</button>
             </div>
         );
     }
