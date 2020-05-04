@@ -1,3 +1,16 @@
+class IlearnxApp extends React.Component {
+    render() {
+        return (
+            <div>
+                <Header />
+                <Action />
+                <Options />
+                <AddOptions />
+            </div>
+        );
+    }
+}
+
 class Header extends React.Component {
     render() {
         return (
@@ -45,13 +58,5 @@ class AddOptions extends React.Component {
     }
 }
 
-const appJsx = (
-    <div>
-        <Header />
-        <Action />
-        <Options />
-        <AddOptions />
-    </div>
-);
 
-ReactDOM.render(appJsx, document.getElementById('app'));
+ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
