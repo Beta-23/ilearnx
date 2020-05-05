@@ -22,12 +22,13 @@ var IlearnxApp = function (_React$Component) {
         value: function render() {
             var title = 'iLearnx App';
             var subtitle = 'Let an al·go·rithm show your learning path!';
+            var options = ['Thing1', 'Thing2', 'Thing3'];
             return React.createElement(
                 'div',
                 null,
                 React.createElement(Header, { title: title, subtitle: subtitle }),
                 React.createElement(Action, null),
-                React.createElement(Options, null),
+                React.createElement(Options, { options: options }),
                 React.createElement('br', null),
                 React.createElement(AddOptions, null)
             );
@@ -108,23 +109,14 @@ var Options = function (_React$Component4) {
     _createClass(Options, [{
         key: 'render',
         value: function render() {
-            var app = {
-                options: ['a', 'b', 'c']
-            };
             return React.createElement(
                 'div',
                 null,
                 React.createElement(Option, null),
-                app.options[0],
                 React.createElement(
                     'p',
                     null,
-                    app.options[1]
-                ),
-                React.createElement(
-                    'p',
-                    null,
-                    app.options[2]
+                    this.props.options.length
                 )
             );
         }

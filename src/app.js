@@ -2,11 +2,12 @@ class IlearnxApp extends React.Component {
     render() {
         const title = 'iLearnx App';
         const subtitle = 'Let an al·go·rithm show your learning path!';
+        const options = ['Thing1', 'Thing2', 'Thing3'];
         return (
             <div>
                 <Header title={title} subtitle={subtitle}/>
                 <Action />
-                <Options />
+                <Options options={options} />
                 <br />
                 <AddOptions />
             </div>
@@ -37,15 +38,10 @@ class Action extends React.Component {
 
 class Options extends React.Component {
     render() {
-        const app = {
-            options: ['a','b','c']
-        };
         return (
             <div>
                 <Option />
-                {app.options[0]}
-                <p>{ app.options[1]}</p>
-                <p>{ app.options[2]}</p>
+                <p>{this.props.options.length}</p>
             </div>
         );
     }
