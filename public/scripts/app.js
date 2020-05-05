@@ -8,8 +8,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Header = function (_React$Component) {
-    _inherits(Header, _React$Component);
+var IlearnxApp = function (_React$Component) {
+    _inherits(IlearnxApp, _React$Component);
+
+    function IlearnxApp() {
+        _classCallCheck(this, IlearnxApp);
+
+        return _possibleConstructorReturn(this, (IlearnxApp.__proto__ || Object.getPrototypeOf(IlearnxApp)).apply(this, arguments));
+    }
+
+    _createClass(IlearnxApp, [{
+        key: 'render',
+        value: function render() {
+            var title = 'iLearnx App';
+            var subtitle = 'Let an al·go·rithm show your learning path!';
+            var options = ['Thing1', 'Thing2', 'Thing3'];
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(Header, { title: title, subtitle: subtitle }),
+                React.createElement(Action, null),
+                React.createElement(Options, { options: options }),
+                React.createElement('br', null),
+                React.createElement(AddOptions, null)
+            );
+        }
+    }]);
+
+    return IlearnxApp;
+}(React.Component);
+
+var Header = function (_React$Component2) {
+    _inherits(Header, _React$Component2);
 
     function Header() {
         _classCallCheck(this, Header);
@@ -26,12 +56,12 @@ var Header = function (_React$Component) {
                 React.createElement(
                     'h1',
                     null,
-                    'iLearnx App'
+                    this.props.title
                 ),
                 React.createElement(
                     'h2',
                     null,
-                    'Let an al\xB7go\xB7rithm show your learning path!'
+                    this.props.subtitle
                 )
             );
         }
@@ -40,8 +70,8 @@ var Header = function (_React$Component) {
     return Header;
 }(React.Component);
 
-var Action = function (_React$Component2) {
-    _inherits(Action, _React$Component2);
+var Action = function (_React$Component3) {
+    _inherits(Action, _React$Component3);
 
     function Action() {
         _classCallCheck(this, Action);
@@ -67,8 +97,8 @@ var Action = function (_React$Component2) {
     return Action;
 }(React.Component);
 
-var Options = function (_React$Component3) {
-    _inherits(Options, _React$Component3);
+var Options = function (_React$Component4) {
+    _inherits(Options, _React$Component4);
 
     function Options() {
         _classCallCheck(this, Options);
@@ -79,27 +109,14 @@ var Options = function (_React$Component3) {
     _createClass(Options, [{
         key: 'render',
         value: function render() {
-            var app = {
-                options: ['a', 'b', 'c']
-            };
             return React.createElement(
                 'div',
                 null,
-                React.createElement(
-                    'h3',
-                    null,
-                    'Your Options:'
-                ),
-                app.options[0],
+                React.createElement(Option, null),
                 React.createElement(
                     'p',
                     null,
-                    app.options[1]
-                ),
-                React.createElement(
-                    'p',
-                    null,
-                    app.options[2]
+                    this.props.options.length
                 )
             );
         }
@@ -108,8 +125,35 @@ var Options = function (_React$Component3) {
     return Options;
 }(React.Component);
 
-var AddOptions = function (_React$Component4) {
-    _inherits(AddOptions, _React$Component4);
+var Option = function (_React$Component5) {
+    _inherits(Option, _React$Component5);
+
+    function Option() {
+        _classCallCheck(this, Option);
+
+        return _possibleConstructorReturn(this, (Option.__proto__ || Object.getPrototypeOf(Option)).apply(this, arguments));
+    }
+
+    _createClass(Option, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    'button',
+                    null,
+                    'Your Option:'
+                )
+            );
+        }
+    }]);
+
+    return Option;
+}(React.Component);
+
+var AddOptions = function (_React$Component6) {
+    _inherits(AddOptions, _React$Component6);
 
     function AddOptions() {
         _classCallCheck(this, AddOptions);
@@ -135,13 +179,4 @@ var AddOptions = function (_React$Component4) {
     return AddOptions;
 }(React.Component);
 
-var appJsx = React.createElement(
-    'div',
-    null,
-    React.createElement(Header, null),
-    React.createElement(Action, null),
-    React.createElement(Options, null),
-    React.createElement(AddOptions, null)
-);
-
-ReactDOM.render(appJsx, document.getElementById('app'));
+ReactDOM.render(React.createElement(IlearnxApp, null), document.getElementById('app'));

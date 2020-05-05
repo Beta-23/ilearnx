@@ -1,9 +1,26 @@
+class IlearnxApp extends React.Component {
+    render() {
+        const title = 'iLearnx App';
+        const subtitle = 'Let an al·go·rithm show your learning path!';
+        const options = ['Thing1', 'Thing2', 'Thing3'];
+        return (
+            <div>
+                <Header title={title} subtitle={subtitle}/>
+                <Action />
+                <Options options={options} />
+                <br />
+                <AddOptions />
+            </div>
+        );
+    }
+}
+
 class Header extends React.Component {
     render() {
         return (
             <div>
-                <h1>iLearnx App</h1>
-                <h2>Let an al·go·rithm show your learning path!</h2>
+                <h1>{this.props.title}</h1>
+                <h2>{this.props.subtitle}</h2>
             </div>
         );
     }
@@ -21,15 +38,20 @@ class Action extends React.Component {
 
 class Options extends React.Component {
     render() {
-        const app = {
-            options: ['a','b','c']
-        };
         return (
             <div>
-                <h3>Your Options:</h3>
-                {app.options[0]}
-                <p>{ app.options[1]}</p>
-                <p>{ app.options[2]}</p>
+                <Option />
+                <p>{this.props.options.length}</p>
+            </div>
+        );
+    }
+}
+
+class Option extends React.Component {
+    render() {
+        return (
+            <div>
+                <button>Your Option:</button>
             </div>
         );
     }
@@ -45,13 +67,5 @@ class AddOptions extends React.Component {
     }
 }
 
-const appJsx = (
-    <div>
-        <Header />
-        <Action />
-        <Options />
-        <AddOptions />
-    </div>
-);
 
-ReactDOM.render(appJsx, document.getElementById('app'));
+ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
