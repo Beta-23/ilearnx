@@ -1,8 +1,10 @@
 class IlearnxApp extends React.Component {
     render() {
+        const title = 'iLearnx App';
+        const subtitle = 'Let an al·go·rithm show your learning path!';
         return (
             <div>
-                <Header />
+                <Header title={title} subtitle={subtitle}/>
                 <Action />
                 <Options />
                 <br />
@@ -16,8 +18,8 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <h1>iLearnx App</h1>
-                <h2>Let an al·go·rithm show your learning path!</h2>
+                <h1>{this.props.title}</h1>
+                <h2>{this.props.subtitle}</h2>
             </div>
         );
     }
@@ -53,7 +55,7 @@ class Option extends React.Component {
     render() {
         return (
             <div>
-                <button>Your Options:</button>
+                <button>Your Option:</button>
             </div>
         );
     }

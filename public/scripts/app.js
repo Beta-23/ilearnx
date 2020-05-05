@@ -20,10 +20,12 @@ var IlearnxApp = function (_React$Component) {
     _createClass(IlearnxApp, [{
         key: 'render',
         value: function render() {
+            var title = 'iLearnx App';
+            var subtitle = 'Let an al·go·rithm show your learning path!';
             return React.createElement(
                 'div',
                 null,
-                React.createElement(Header, null),
+                React.createElement(Header, { title: title, subtitle: subtitle }),
                 React.createElement(Action, null),
                 React.createElement(Options, null),
                 React.createElement('br', null),
@@ -53,12 +55,12 @@ var Header = function (_React$Component2) {
                 React.createElement(
                     'h1',
                     null,
-                    'iLearnx App'
+                    this.props.title
                 ),
                 React.createElement(
                     'h2',
                     null,
-                    'Let an al\xB7go\xB7rithm show your learning path!'
+                    this.props.subtitle
                 )
             );
         }
@@ -149,7 +151,7 @@ var Option = function (_React$Component5) {
                 React.createElement(
                     'button',
                     null,
-                    'Your Options:'
+                    'Your Option:'
                 )
             );
         }
