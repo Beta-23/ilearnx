@@ -113,6 +113,11 @@ var Options = function (_React$Component4) {
                 'div',
                 null,
                 React.createElement(Option, null),
+                React.createElement(
+                    'p',
+                    null,
+                    this.props.options.length > 0 ? 'Here are your options' : 'No Options'
+                ),
                 this.props.options.map(function (option) {
                     return React.createElement(
                         'p',
@@ -139,15 +144,7 @@ var Option = function (_React$Component5) {
     _createClass(Option, [{
         key: 'render',
         value: function render() {
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'button',
-                    null,
-                    'Your Option:'
-                )
-            );
+            return React.createElement('div', null);
         }
     }]);
 
