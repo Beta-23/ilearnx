@@ -9,7 +9,7 @@ class IlearnxApp extends React.Component {
                 <Action />
                 <Options options={options} />
                 <br />
-                <AddOptions />
+                <AddOption />
             </div>
         );
     }
@@ -54,7 +54,9 @@ class Options extends React.Component {
                     this.props.options.map((option) => <Option key={option} optionText={option}/>)
                 } 
                 <br />
-                <button onClick={this.removeAllOptions}>Remove All</button>
+                <button disabled={this.props.options.length === 0} 
+                    onClick={this.removeAllOptions}>Remove All
+                </button>
             </div>
         );
     }
@@ -70,11 +72,18 @@ class Option extends React.Component {
     }
 }
 
-class AddOptions extends React.Component {
+class AddOption extends React.Component {
+    handleAddOption () {
+        
+    }
     render() {
+        
         return (
             <div>
+                <form onSubmit={this.handleAddOption}>
+                <input type="text" name="option" />
                 <button>Add Your Langueage Choice</button>
+                </form>   
             </div>
         );
     }

@@ -30,7 +30,7 @@ var IlearnxApp = function (_React$Component) {
                 React.createElement(Action, null),
                 React.createElement(Options, { options: options }),
                 React.createElement('br', null),
-                React.createElement(AddOptions, null)
+                React.createElement(AddOption, null)
             );
         }
     }]);
@@ -136,7 +136,8 @@ var Options = function (_React$Component4) {
                 React.createElement('br', null),
                 React.createElement(
                     'button',
-                    { onClick: this.removeAllOptions },
+                    { disabled: this.props.options.length === 0,
+                        onClick: this.removeAllOptions },
                     'Remove All'
                 )
             );
@@ -169,31 +170,40 @@ var Option = function (_React$Component5) {
     return Option;
 }(React.Component);
 
-var AddOptions = function (_React$Component6) {
-    _inherits(AddOptions, _React$Component6);
+var AddOption = function (_React$Component6) {
+    _inherits(AddOption, _React$Component6);
 
-    function AddOptions() {
-        _classCallCheck(this, AddOptions);
+    function AddOption() {
+        _classCallCheck(this, AddOption);
 
-        return _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).apply(this, arguments));
     }
 
-    _createClass(AddOptions, [{
+    _createClass(AddOption, [{
+        key: 'handleAddOption',
+        value: function handleAddOption() {}
+    }, {
         key: 'render',
         value: function render() {
+
             return React.createElement(
                 'div',
                 null,
                 React.createElement(
-                    'button',
-                    null,
-                    'Add Your Langueage Choice'
+                    'form',
+                    { onSubmit: this.handleAddOption },
+                    React.createElement('input', { type: 'text', name: 'option' }),
+                    React.createElement(
+                        'button',
+                        null,
+                        'Add Your Langueage Choice'
+                    )
                 )
             );
         }
     }]);
 
-    return AddOptions;
+    return AddOption;
 }(React.Component);
 
 ReactDOM.render(React.createElement(IlearnxApp, null), document.getElementById('app'));
