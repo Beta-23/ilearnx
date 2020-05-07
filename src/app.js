@@ -9,7 +9,7 @@ class IlearnxApp extends React.Component {
                 <Action />
                 <Options options={options} />
                 <br />
-                <AddOptions />
+                <AddOption />
             </div>
         );
     }
@@ -27,16 +27,24 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
+    handlePick() {
+        alert('handlePick class hitting!');
+        console.log('Action onClick working...');
+    }
     render() {
         return (
             <div>
-                <button>What langueage should I learn?</button>
+                <button onClick={this.handlePick}>What langueage should I learn?</button>
             </div>
         );
     }
 }
 
 class Options extends React.Component {
+    removeAllOptions() {
+        alert('Remove class hitting!');
+        console.log('RemoveAll onClick working...');
+    }
     render() {
         return (
             <div>
@@ -44,7 +52,11 @@ class Options extends React.Component {
                 <p>{this.props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
                 {
                     this.props.options.map((option) => <Option key={option} optionText={option}/>)
-                }    
+                } 
+                <br />
+                <button disabled={this.props.options.length === 0} 
+                    onClick={this.removeAllOptions}>Remove All
+                </button>
             </div>
         );
     }
@@ -60,11 +72,23 @@ class Option extends React.Component {
     }
 }
 
-class AddOptions extends React.Component {
+class AddOption extends React.Component {
+    handleAddOption (e) {
+        e.preventDefault();
+  
+        const option = e.target.elements.option.value.trim();
+
+        if (option) {
+            alert(option);
+        }   
+    }
     render() {
         return (
             <div>
+                <form onSubmit={this.handleAddOption}>
+                <input type="text" name="option" />
                 <button>Add Your Langueage Choice</button>
+                </form>   
             </div>
         );
     }
