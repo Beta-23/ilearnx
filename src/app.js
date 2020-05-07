@@ -28,8 +28,8 @@ class Header extends React.Component {
 
 class Action extends React.Component {
     handlePick() {
-        alert('handlePick class hitting!')
-        console.log('Action onClick working...')
+        alert('handlePick class hitting!');
+        console.log('Action onClick working...');
     }
     render() {
         return (
@@ -42,7 +42,8 @@ class Action extends React.Component {
 
 class Options extends React.Component {
     removeAllOptions() {
-        
+        alert('Remove class hitting!');
+        console.log('RemoveAll onClick working...');
     }
     render() {
         return (
@@ -52,6 +53,7 @@ class Options extends React.Component {
                 {
                     this.props.options.map((option) => <Option key={option} optionText={option}/>)
                 } 
+                <br />
                 <button onClick={this.removeAllOptions}>Remove All</button>
             </div>
         );
