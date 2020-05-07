@@ -116,8 +116,11 @@ var Options = function (_React$Component4) {
                 React.createElement(
                     'p',
                     null,
-                    this.props.options.length
-                )
+                    this.props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'
+                ),
+                this.props.options.map(function (option) {
+                    return React.createElement(Option, { key: option, optionText: option });
+                })
             );
         }
     }]);
@@ -140,11 +143,7 @@ var Option = function (_React$Component5) {
             return React.createElement(
                 'div',
                 null,
-                React.createElement(
-                    'button',
-                    null,
-                    'Your Option:'
-                )
+                this.props.optionText
             );
         }
     }]);
