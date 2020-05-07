@@ -41,6 +41,9 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
+    removeAllOptions() {
+        
+    }
     render() {
         return (
             <div>
@@ -48,7 +51,8 @@ class Options extends React.Component {
                 <p>{this.props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
                 {
                     this.props.options.map((option) => <Option key={option} optionText={option}/>)
-                }    
+                } 
+                <button onClick={this.removeAllOptions}>Remove All</button>
             </div>
         );
     }

@@ -113,6 +113,9 @@ var Options = function (_React$Component4) {
     }
 
     _createClass(Options, [{
+        key: 'removeAllOptions',
+        value: function removeAllOptions() {}
+    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -126,7 +129,12 @@ var Options = function (_React$Component4) {
                 ),
                 this.props.options.map(function (option) {
                     return React.createElement(Option, { key: option, optionText: option });
-                })
+                }),
+                React.createElement(
+                    'button',
+                    { onClick: this.removeAllOptions },
+                    'Remove All'
+                )
             );
         }
     }]);
