@@ -2,14 +2,21 @@ class Counter extends React.Component {
     render() {
         return(
             <div>
-                <h1>Count: </h1>
-                <button>+1</button>
+                <h1>Count: {count}</h1>
+                <button onClick={addOne}>+1</button>
                 <button>-1</button>
                 <br />
                 <button>Reset</button>
             </div>
         )
     }
+}
+
+let count =0;
+
+const addOne = () => {
+    count++;
+    console.log('addOne is working!');
 }
 
 ReactDOM.render(<Counter />, document.getElementById('app'));

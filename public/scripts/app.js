@@ -26,11 +26,12 @@ var Counter = function (_React$Component) {
                 React.createElement(
                     'h1',
                     null,
-                    'Count: '
+                    'Count: ',
+                    count
                 ),
                 React.createElement(
                     'button',
-                    null,
+                    { onClick: addOne },
                     '+1'
                 ),
                 React.createElement(
@@ -50,6 +51,13 @@ var Counter = function (_React$Component) {
 
     return Counter;
 }(React.Component);
+
+var count = 0;
+
+var addOne = function addOne() {
+    count++;
+    console.log('addOne is working!');
+};
 
 ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
 
