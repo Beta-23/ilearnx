@@ -11,13 +11,33 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Counter = function (_React$Component) {
     _inherits(Counter, _React$Component);
 
-    function Counter() {
+    function Counter(props) {
         _classCallCheck(this, Counter);
 
-        return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
+
+        _this.handleAddOne = _this.handleAddOne.bind(_this);
+        _this.handleMinusOne = _this.handleMinusOne.bind(_this);
+        _this.handleReset = _this.handleReset.bind(_this);
+        return _this;
     }
 
     _createClass(Counter, [{
+        key: 'handleAddOne',
+        value: function handleAddOne() {
+            console.log('addOne is working!');
+        }
+    }, {
+        key: 'handleMinusOne',
+        value: function handleMinusOne() {
+            console.log('minusOne is working!');
+        }
+    }, {
+        key: 'handleReset',
+        value: function handleReset() {
+            console.log('reSet is working!');
+        }
+    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -26,23 +46,22 @@ var Counter = function (_React$Component) {
                 React.createElement(
                     'h1',
                     null,
-                    'Count: ',
-                    count
+                    'Count: '
                 ),
                 React.createElement(
                     'button',
-                    { onClick: addOne },
+                    { onClick: this.handleAddOne },
                     '+1'
                 ),
                 React.createElement(
                     'button',
-                    null,
+                    { onClick: this.handleMinusOne },
                     '-1'
                 ),
                 React.createElement('br', null),
                 React.createElement(
                     'button',
-                    null,
+                    { onClick: this.handleReset },
                     'Reset'
                 )
             );
@@ -51,13 +70,6 @@ var Counter = function (_React$Component) {
 
     return Counter;
 }(React.Component);
-
-var count = 0;
-
-var addOne = function addOne() {
-    count++;
-    console.log('addOne is working!');
-};
 
 ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
 
