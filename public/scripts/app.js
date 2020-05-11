@@ -36,7 +36,7 @@ var Counter = function (_React$Component) {
                 ),
                 React.createElement(
                     'button',
-                    null,
+                    { onClick: minusOne },
                     '-1'
                 ),
                 React.createElement('br', null),
@@ -57,6 +57,11 @@ var count = 0;
 var addOne = function addOne() {
     count++;
     console.log('addOne is working!');
+};
+
+var minusOne = function minusOne() {
+    count--;
+    console.log('minusOne is working!');
 };
 
 ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
