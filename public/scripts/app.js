@@ -18,6 +18,21 @@ var Counter = function (_React$Component) {
     }
 
     _createClass(Counter, [{
+        key: 'handleAddOne',
+        value: function handleAddOne() {
+            console.log('addOne is working!');
+        }
+    }, {
+        key: 'handleMinusOne',
+        value: function handleMinusOne() {
+            console.log('minusOne is working!');
+        }
+    }, {
+        key: 'handleReSet',
+        value: function handleReSet() {
+            console.log('reSet is working!');
+        }
+    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -26,17 +41,16 @@ var Counter = function (_React$Component) {
                 React.createElement(
                     'h1',
                     null,
-                    'Count: ',
-                    count
+                    'Count: '
                 ),
                 React.createElement(
                     'button',
-                    { onClick: addOne },
+                    { onClick: this.handleAddOne },
                     '+1'
                 ),
                 React.createElement(
                     'button',
-                    { onClick: minusOne },
+                    null,
                     '-1'
                 ),
                 React.createElement('br', null),
@@ -51,18 +65,6 @@ var Counter = function (_React$Component) {
 
     return Counter;
 }(React.Component);
-
-var count = 0;
-
-var addOne = function addOne() {
-    count++;
-    console.log('addOne is working!');
-};
-
-var minusOne = function minusOne() {
-    count--;
-    console.log('minusOne is working!');
-};
 
 ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
 
