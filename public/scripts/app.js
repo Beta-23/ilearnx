@@ -33,7 +33,7 @@ var Counter = function (_React$Component) {
                     count: prevState.count + 1
                 };
             });
-            console.log('handleAddOne working');
+            console.log('handleAddOne updated state');
         }
     }, {
         key: 'handleMinusOne',
@@ -44,12 +44,17 @@ var Counter = function (_React$Component) {
                 };
                 return alert('Count is a Zero');
             });
-            console.log('handleMinusOne working');
+            console.log('handleMinusOne updated state');
         }
     }, {
         key: 'handleReset',
         value: function handleReset() {
-            console.log('reSet is working!');
+            this.setState(function () {
+                return {
+                    count: 0
+                };
+            });
+            console.log('handleReset updated state');
         }
     }, {
         key: 'render',
