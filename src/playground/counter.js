@@ -10,7 +10,12 @@ class Counter extends React.Component {
     }
     
     handleAddOne() { 
-        console.log('addOne is working!');
+        this.setState((prevState) => {
+            return {
+                count: prevState.count + 1
+            };
+        });
+        console.log('handleAddOne working');
     }
 
     handleMinusOne() {
