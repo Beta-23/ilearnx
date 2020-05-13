@@ -39,10 +39,12 @@ var Counter = function (_React$Component) {
         key: 'handleMinusOne',
         value: function handleMinusOne() {
             this.setState(function (prevState) {
-                return {
+                if (prevState.count >= 1) return {
                     count: prevState.count - 1
                 };
+                return alert('Count is a Zero');
             });
+            console.log('handleMinusOne working');
         }
     }, {
         key: 'handleReset',
