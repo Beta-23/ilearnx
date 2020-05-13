@@ -19,23 +19,42 @@ var Counter = function (_React$Component) {
         _this.handleAddOne = _this.handleAddOne.bind(_this);
         _this.handleMinusOne = _this.handleMinusOne.bind(_this);
         _this.handleReset = _this.handleReset.bind(_this);
+        _this.state = {
+            count: 0
+        };
         return _this;
     }
 
     _createClass(Counter, [{
         key: 'handleAddOne',
         value: function handleAddOne() {
-            console.log('addOne is working!');
+            this.setState(function (prevState) {
+                return {
+                    count: prevState.count + 1
+                };
+            });
+            console.log('handleAddOne updated state');
         }
     }, {
         key: 'handleMinusOne',
         value: function handleMinusOne() {
-            console.log('minusOne is working!');
+            this.setState(function (prevState) {
+                if (prevState.count >= 1) return {
+                    count: prevState.count - 1
+                };
+                return alert('Count is a Zero');
+            });
+            console.log('handleMinusOne updated state');
         }
     }, {
         key: 'handleReset',
         value: function handleReset() {
-            console.log('reSet is working!');
+            this.setState(function () {
+                return {
+                    count: 0
+                };
+            });
+            console.log('handleReset updated state');
         }
     }, {
         key: 'render',
@@ -46,7 +65,8 @@ var Counter = function (_React$Component) {
                 React.createElement(
                     'h1',
                     null,
-                    'Count: '
+                    'Count: ',
+                    this.state.count
                 ),
                 React.createElement(
                     'button',
