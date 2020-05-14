@@ -33,6 +33,7 @@ var VisibilityToggle = function (_React$Component) {
                     visibility: !prevState.visibility
                 };
             });
+            console.log('handleToggleVisibility updated state');
         }
     }, {
         key: 'render',
