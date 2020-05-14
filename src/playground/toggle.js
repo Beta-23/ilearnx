@@ -1,28 +1,38 @@
 console.log('App is loading...Testing babel');
 
-let visibility = false;
+class VisibilityToggle extends React.Component {
+    constructor(props){
+        super(props);
+        this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
+        this.state = {
+            visibility: false
+        };
+    }
 
-const changeVisibility = () =>{
- visibility = !visibility;
- render();
-};
+    handleToggleVisibility() { 
+        this.setState((prevState) => {
+            return {
+                visibility: !prevState.visibility
+            };
+        });
+    }
 
-const render = () => {
-    const toggle = (
+    render() {
+        return(
         <div>
             <h1>Toggle</h1>
-                <button onClick={changeVisibility}>
-                    { visibility ? 'HIDE DETAILS' : 'SHOW DETAILS' }
+                <button onClick={this.handleToggleVisibility}>
+                    { this.state.visibility ? 'HIDE DETAILS' : 'SHOW DETAILS' }
                 </button>
-                {visibility && (
+                {this.state.visibility && (
                     <div>
                         <p>Your Details Here!</p>
                     </div>
                 )}    
-        </div>
-    );
-
-    ReactDOM.render(toggle, document.getElementById('app'));
+        </div> 
+        );
+    }
 }
 
-render();
+ReactDOM.render(<VisibilityToggle />, document.getElementById('app'));
+
