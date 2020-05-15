@@ -16,6 +16,7 @@ var IlearnxApp = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (IlearnxApp.__proto__ || Object.getPrototypeOf(IlearnxApp)).call(this, props));
 
+        _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
         _this.state = {
             options: ['Thing1', 'Thing2', 'Thing3', 'Thing4']
         };
@@ -23,6 +24,15 @@ var IlearnxApp = function (_React$Component) {
     }
 
     _createClass(IlearnxApp, [{
+        key: 'handleDeleteOptions',
+        value: function handleDeleteOptions() {
+            this.setState(function () {
+                return {
+                    options: []
+                };
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var title = 'iLearnx App';
@@ -33,7 +43,10 @@ var IlearnxApp = function (_React$Component) {
                 null,
                 React.createElement(Header, { title: title, subtitle: subtitle }),
                 React.createElement(Action, { hasOptions: this.state.options.length > 0 }),
-                React.createElement(Options, { options: this.state.options }),
+                React.createElement(Options, {
+                    options: this.state.options,
+                    handleDeleteOptions: this.handleDeleteOptions
+                }),
                 React.createElement('br', null),
                 React.createElement(AddOption, null)
             );
@@ -114,22 +127,13 @@ var Action = function (_React$Component3) {
 var Options = function (_React$Component4) {
     _inherits(Options, _React$Component4);
 
-    function Options(props) {
+    function Options() {
         _classCallCheck(this, Options);
 
-        var _this4 = _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).call(this, props));
-
-        _this4.removeAllOptions = _this4.removeAllOptions.bind(_this4);
-        return _this4;
+        return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
     }
 
     _createClass(Options, [{
-        key: 'removeAllOptions',
-        value: function removeAllOptions() {
-
-            console.log('RemoveAll onClick working...');
-        }
-    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -149,7 +153,7 @@ var Options = function (_React$Component4) {
                     'button',
                     {
                         disabled: this.props.options.length === 0,
-                        onClick: this.removeAllOptions
+                        onClick: this.props.handleDeleteOptions
                     },
                     'Remove All'
                 )

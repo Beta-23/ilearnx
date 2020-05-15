@@ -1,9 +1,18 @@
 class IlearnxApp extends React.Component {
     constructor(props){
         super(props);
+        this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
         this.state = {
             options: ['Thing1','Thing2', 'Thing3', 'Thing4']
         };
+    }
+
+    handleDeleteOptions() {
+        this.setState(() => {
+            return {
+                options: []
+            }
+        });
     }
 
     render() {
@@ -14,7 +23,10 @@ class IlearnxApp extends React.Component {
             <div>
                 <Header title={title} subtitle={subtitle}/>
                 <Action hasOptions={this.state.options.length > 0 } />
-                <Options options={this.state.options} />
+                <Options 
+                    options={this.state.options} 
+                    handleDeleteOptions={this.handleDeleteOptions}
+                />
                 <br />
                 <AddOption />
             </div>
@@ -53,14 +65,7 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
-    constructor(props) {
-        super(props);
-        this.removeAllOptions = this.removeAllOptions.bind(this);
-    }
-    removeAllOptions() {
-        
-        console.log('RemoveAll onClick working...');
-    }
+
     render() {
         return (
             <div>
@@ -72,7 +77,7 @@ class Options extends React.Component {
                 <br />
                 <button 
                     disabled={this.props.options.length === 0} 
-                    onClick={this.removeAllOptions}
+                    onClick={this.props.handleDeleteOptions}
                     >
                     Remove All
                 </button>
