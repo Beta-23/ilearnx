@@ -18,6 +18,7 @@ var IlearnxApp = function (_React$Component) {
 
         _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
         _this.handlePickOptions = _this.handlePickOptions.bind(_this);
+        _this.handleAddOption = _this.handleAddOption.bind(_this);
         _this.state = {
             options: ['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5']
         };
@@ -49,6 +50,11 @@ var IlearnxApp = function (_React$Component) {
             });
         }
     }, {
+        key: 'handleAddOption',
+        value: function handleAddOption(option) {
+            console.log(option);
+        }
+    }, {
         key: 'render',
         value: function render() {
             var title = 'iLearnx App';
@@ -67,7 +73,9 @@ var IlearnxApp = function (_React$Component) {
                     handleDeleteOptions: this.handleDeleteOptions
                 }),
                 React.createElement('br', null),
-                React.createElement(AddOption, null)
+                React.createElement(AddOption, {
+                    handleAddOption: this.handleAddOption
+                })
             );
         }
     }]);
@@ -203,10 +211,13 @@ var Option = function (_React$Component5) {
 var AddOption = function (_React$Component6) {
     _inherits(AddOption, _React$Component6);
 
-    function AddOption() {
+    function AddOption(props) {
         _classCallCheck(this, AddOption);
 
-        return _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).apply(this, arguments));
+        var _this7 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
+
+        _this7.handleAddOption = _this7.handleAddOption.bind(_this7);
+        return _this7;
     }
 
     _createClass(AddOption, [{
@@ -217,7 +228,7 @@ var AddOption = function (_React$Component6) {
             var option = e.target.elements.option.value.trim();
 
             if (option) {
-                alert(option);
+                this.props.handleAddOption(option);
             }
         }
     }, {

@@ -3,6 +3,7 @@ class IlearnxApp extends React.Component {
         super(props);
         this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
         this.handlePickOptions=this.handlePickOptions.bind(this);
+        this.handleAddOption=this.handleAddOption.bind(this);
         this.state = {
             options: ['Thing 1','Thing 2', 'Thing 3', 'Thing 4', 'Thing 5']
         };
@@ -24,6 +25,10 @@ class IlearnxApp extends React.Component {
         });
     }
 
+    handleAddOption(option) {
+        console.log(option);
+    }
+
     render() {
         const title = 'iLearnx App';
         const subtitle = 'Let an al·go·rithm show your learning path!';
@@ -40,7 +45,9 @@ class IlearnxApp extends React.Component {
                     handleDeleteOptions={this.handleDeleteOptions}
                 />
                 <br />
-                <AddOption />
+                <AddOption
+                    handleAddOption={this.handleAddOption}
+                />
             </div>
         );
     }
@@ -106,13 +113,17 @@ class Option extends React.Component {
 }
 
 class AddOption extends React.Component {
-    handleAddOption (e) {
+    constructor(props) {
+        super(props);
+        this.handleAddOption = this.handleAddOption.bind(this);
+    }
+    handleAddOption(e) {
         e.preventDefault();
   
         const option = e.target.elements.option.value.trim();
 
         if (option) {
-            alert(option);
+            this.props.handleAddOption(option);
         }   
     }
     render() {
