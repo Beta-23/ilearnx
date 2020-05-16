@@ -52,7 +52,11 @@ var IlearnxApp = function (_React$Component) {
     }, {
         key: 'handleAddOption',
         value: function handleAddOption(option) {
-            console.log(option);
+            this.setState(function (prevState) {
+                return {
+                    options: prevState.options.concat([option])
+                };
+            });
         }
     }, {
         key: 'render',
