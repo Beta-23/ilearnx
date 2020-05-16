@@ -49,9 +49,17 @@ var IlearnxApp = function (_React$Component) {
                 return alert('Our pick is: ' + option);
             });
         }
+        // Event handler from child
+
     }, {
         key: 'handleAddOption',
         value: function handleAddOption(option) {
+            if (!option) {
+                return 'Enter a valid value for language choice!';
+            } else if (this.state.options.indexOf(option) > -1) {
+                return alert('This language is already in you choices!');
+            }
+
             this.setState(function (prevState) {
                 return {
                     options: prevState.options.concat(option)
@@ -221,6 +229,9 @@ var AddOption = function (_React$Component6) {
         var _this7 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
 
         _this7.handleAddOption = _this7.handleAddOption.bind(_this7);
+        _this7.state = {
+            error: undefined
+        };
         return _this7;
     }
 
@@ -230,10 +241,11 @@ var AddOption = function (_React$Component6) {
             e.preventDefault();
 
             var option = e.target.elements.option.value.trim();
+            var error = this.props.handleAddOption(option);
 
-            if (option) {
-                this.props.handleAddOption(option);
-            }
+            this.setState(function () {
+                return { error: error };
+            });
         }
     }, {
         key: 'render',
@@ -241,6 +253,11 @@ var AddOption = function (_React$Component6) {
             return React.createElement(
                 'div',
                 null,
+                this.state.error && React.createElement(
+                    'p',
+                    null,
+                    this.state.error
+                ),
                 React.createElement(
                     'form',
                     { onSubmit: this.handleAddOption },
