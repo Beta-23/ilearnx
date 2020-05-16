@@ -3,8 +3,9 @@ class IlearnxApp extends React.Component {
         super(props);
         this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
         this.handlePickOptions=this.handlePickOptions.bind(this);
+        this.handleAddOption=this.handleAddOption.bind(this);
         this.state = {
-            options: ['Thing 1','Thing 2', 'Thing 3', 'Thing 4', 'Thing 5']
+            options: []
         };
     }
     // Event handler
@@ -21,6 +22,20 @@ class IlearnxApp extends React.Component {
             const randomNum = Math.floor(Math.random() * this.state.options.length);
             const option = this.state.options[randomNum];
             return alert(`Our pick is: ${option}`)
+        });
+    }
+    // Event handler from child
+    handleAddOption(option) {
+        if (!option) {
+            return 'Enter a valid value for language choice!';
+        } else if (this.state.options.indexOf(option) > -1) {
+            return alert('This language is already in you choices!');
+        } 
+
+        this.setState((prevState) => {
+            return {
+                options: prevState.options.concat(option)
+            };
         });
     }
 
@@ -40,7 +55,9 @@ class IlearnxApp extends React.Component {
                     handleDeleteOptions={this.handleDeleteOptions}
                 />
                 <br />
-                <AddOption />
+                <AddOption
+                    handleAddOption={this.handleAddOption}
+                />
             </div>
         );
     }
@@ -106,18 +123,27 @@ class Option extends React.Component {
 }
 
 class AddOption extends React.Component {
-    handleAddOption (e) {
+    constructor(props) {
+        super(props);
+        this.handleAddOption = this.handleAddOption.bind(this);
+        this.state = {
+            error: undefined
+        };
+    }
+    handleAddOption(e) {
         e.preventDefault();
   
         const option = e.target.elements.option.value.trim();
+        const error = this.props.handleAddOption(option); 
 
-        if (option) {
-            alert(option);
-        }   
+        this.setState(() => {
+            return { error };
+        });
     }
     render() {
         return (
             <div>
+                { this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.handleAddOption}>
                 <input type="text" name="option" />
                 <button>Add Your Langueage Choice</button>
