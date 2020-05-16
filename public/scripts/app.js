@@ -20,7 +20,7 @@ var IlearnxApp = function (_React$Component) {
         _this.handlePickOptions = _this.handlePickOptions.bind(_this);
         _this.handleAddOption = _this.handleAddOption.bind(_this);
         _this.state = {
-            options: ['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5']
+            options: []
         };
         return _this;
     }
@@ -54,7 +54,7 @@ var IlearnxApp = function (_React$Component) {
         value: function handleAddOption(option) {
             this.setState(function (prevState) {
                 return {
-                    options: prevState.options.concat([option])
+                    options: prevState.options.concat(option)
                 };
             });
         }

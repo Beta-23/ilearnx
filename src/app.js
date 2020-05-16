@@ -5,7 +5,7 @@ class IlearnxApp extends React.Component {
         this.handlePickOptions=this.handlePickOptions.bind(this);
         this.handleAddOption=this.handleAddOption.bind(this);
         this.state = {
-            options: ['Thing 1','Thing 2', 'Thing 3', 'Thing 4', 'Thing 5']
+            options: []
         };
     }
     // Event handler
@@ -28,7 +28,7 @@ class IlearnxApp extends React.Component {
     handleAddOption(option) {
         this.setState((prevState) => {
             return {
-                options: prevState.options.concat([option])
+                options: prevState.options.concat(option)
             };
         });
     }
