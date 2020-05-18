@@ -63,16 +63,25 @@ class IlearnxApp extends React.Component {
     }
 }
 
-class Header extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <h2>{this.props.subtitle}</h2>
-            </div>
-        );
-    }
+const Header = (props) => {
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            <h2>{props.subtitle}</h2>
+        </div>
+    );
 }
+
+// class Header extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <h1>{this.props.title}</h1>
+//                 <h2>{this.props.subtitle}</h2>
+//             </div>
+//         );
+//     }
+// }
 // stateless functional component for User
 const Action = (props) => {
     return (
@@ -87,21 +96,7 @@ const Action = (props) => {
     );
 }
 
-// class Action extends React.Component {
-   
-//     render() {
-//         return (
-//             <div>
-//                 <button 
-//                     onClick={this.props.handlePickOptions}
-//                     disabled={!this.props.hasOptions}
-//                     >
-//                     What langueage should I learn?
-//                 </button>
-//             </div>
-//         );
-//     }
-// }
+
 
 class Options extends React.Component {
 
