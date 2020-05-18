@@ -63,63 +63,57 @@ class IlearnxApp extends React.Component {
     }
 }
 
-class Header extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <h2>{this.props.subtitle}</h2>
-            </div>
-        );
-    }
+// Header stateless functional component for User
+const Header = (props) => {
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            <h2>{props.subtitle}</h2>
+        </div>
+    );
 }
 
-class Action extends React.Component {
-   
-    render() {
-        return (
-            <div>
-                <button 
-                    onClick={this.props.handlePickOptions}
-                    disabled={!this.props.hasOptions}
-                    >
-                    What langueage should I learn?
-                </button>
-            </div>
-        );
-    }
+// Action stateless functional component for User
+const Action = (props) => {
+    return (
+        <div>
+            <button 
+                onClick={props.handlePickOptions}
+                disabled={!props.hasOptions}
+                >
+                What langueage should I learn?
+            </button>
+        </div>
+    );
 }
 
-class Options extends React.Component {
-
-    render() {
-        return (
-            <div>
-                <Option />
-                <p>{this.props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
-                {
-                    this.props.options.map((option) => <Option key={option} optionText={option}/>)
-                } 
-                <br />
-                <button 
-                    disabled={this.props.options.length === 0} 
-                    onClick={this.props.handleDeleteOptions}
-                    >
-                    Remove All
-                </button>
-            </div>
-        );
-    }
+// Options stateless functional component for User
+const Options = (props) => {
+    return (
+        <div>
+            <Option />
+            <p>{props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
+            {
+                props.options.map((option) => <Option key={option} optionText={option}/>)
+            } 
+            <br />
+            <button 
+                disabled={props.options.length === 0} 
+                onClick={props.handleDeleteOptions}
+                >
+                Remove All
+            </button>
+        </div>
+    ); 
 }
 
-class Option extends React.Component {
-    render() {
-        return (
-            <div>
-                {this.props.optionText}
-            </div>
-        );
-    }
+// Option stateless functional component for User
+const Option = (props) => {
+    return (
+        <div>
+            {props.optionText}
+        </div>
+    );
 }
 
 class AddOption extends React.Component {
@@ -152,6 +146,5 @@ class AddOption extends React.Component {
         );
     }
 }
-
 
 ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
