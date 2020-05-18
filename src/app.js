@@ -153,5 +153,14 @@ class AddOption extends React.Component {
     }
 }
 
+// stateless functional component for User
+const User = () => {
+    return (
+        <div>
+            <p>Name: </p>
+            <p>Age: </p>
+        </div>
+    );
+};
 
-ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
+ReactDOM.render(<User />, document.getElementById('app'));
