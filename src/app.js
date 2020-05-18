@@ -63,6 +63,7 @@ class IlearnxApp extends React.Component {
     }
 }
 
+// stateless functional component for User
 const Header = (props) => {
     return (
         <div>
@@ -72,16 +73,6 @@ const Header = (props) => {
     );
 }
 
-// class Header extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <h1>{this.props.title}</h1>
-//                 <h2>{this.props.subtitle}</h2>
-//             </div>
-//         );
-//     }
-// }
 // stateless functional component for User
 const Action = (props) => {
     return (
@@ -96,29 +87,46 @@ const Action = (props) => {
     );
 }
 
-
-
-class Options extends React.Component {
-
-    render() {
-        return (
-            <div>
-                <Option />
-                <p>{this.props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
-                {
-                    this.props.options.map((option) => <Option key={option} optionText={option}/>)
-                } 
-                <br />
-                <button 
-                    disabled={this.props.options.length === 0} 
-                    onClick={this.props.handleDeleteOptions}
-                    >
-                    Remove All
-                </button>
-            </div>
-        );
-    }
+const Options = (props) => {
+    return (
+        <div>
+            <Option />
+            <p>{props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
+            {
+                props.options.map((option) => <Option key={option} optionText={option}/>)
+            } 
+            <br />
+            <button 
+                disabled={props.options.length === 0} 
+                onClick={props.handleDeleteOptions}
+                >
+                Remove All
+            </button>
+        </div>
+    ); 
 }
+
+// class Options extends React.Component {
+
+//     render() {
+//         return (
+//             <div>
+//                 <Option />
+//                 <p>{this.props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
+//                 {
+//                     this.props.options.map((option) => <Option key={option} optionText={option}/>)
+//                 } 
+//                 <br />
+//                 <button 
+//                     disabled={this.props.options.length === 0} 
+//                     onClick={this.props.handleDeleteOptions}
+//                     >
+//                     Remove All
+//                 </button>
+//             </div>
+//         );
+//     }
+// }
 
 class Option extends React.Component {
     render() {
