@@ -87,6 +87,7 @@ const Action = (props) => {
     );
 }
 
+// stateless functional component for User
 const Options = (props) => {
     return (
         <div>
@@ -106,37 +107,23 @@ const Options = (props) => {
     ); 
 }
 
-// class Options extends React.Component {
+const Option = (props) => {
+    return (
+        <div>
+            {props.optionText}
+        </div>
+    );
+}
 
+// class Option extends React.Component {
 //     render() {
 //         return (
 //             <div>
-//                 <Option />
-//                 <p>{this.props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
-//                 {
-//                     this.props.options.map((option) => <Option key={option} optionText={option}/>)
-//                 } 
-//                 <br />
-//                 <button 
-//                     disabled={this.props.options.length === 0} 
-//                     onClick={this.props.handleDeleteOptions}
-//                     >
-//                     Remove All
-//                 </button>
+//                 {this.props.optionText}
 //             </div>
 //         );
 //     }
 // }
-
-class Option extends React.Component {
-    render() {
-        return (
-            <div>
-                {this.props.optionText}
-            </div>
-        );
-    }
-}
 
 class AddOption extends React.Component {
     constructor(props) {
