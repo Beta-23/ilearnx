@@ -73,22 +73,35 @@ class Header extends React.Component {
         );
     }
 }
-
-class Action extends React.Component {
-   
-    render() {
-        return (
-            <div>
-                <button 
-                    onClick={this.props.handlePickOptions}
-                    disabled={!this.props.hasOptions}
-                    >
-                    What langueage should I learn?
-                </button>
-            </div>
-        );
-    }
+// stateless functional component for User
+const Action = (props) => {
+    return (
+        <div>
+            <button 
+                onClick={props.handlePickOptions}
+                disabled={!props.hasOptions}
+                >
+                What langueage should I learn?
+            </button>
+        </div>
+    );
 }
+
+// class Action extends React.Component {
+   
+//     render() {
+//         return (
+//             <div>
+//                 <button 
+//                     onClick={this.props.handlePickOptions}
+//                     disabled={!this.props.hasOptions}
+//                     >
+//                     What langueage should I learn?
+//                 </button>
+//             </div>
+//         );
+//     }
+// }
 
 class Options extends React.Component {
 
@@ -154,13 +167,13 @@ class AddOption extends React.Component {
 }
 
 // stateless functional component for User
-const User = (props) => {
-    return (
-        <div>
-            <p>Name: {props.name}</p>
-            <p>Age: {props.age}</p>
-        </div>
-    );
-};
+// const User = (props) => {
+//     return (
+//         <div>
+//             <p>Name: {props.name}</p>
+//             <p>Age: {props.age}</p>
+//         </div>
+//     );
+// };
 
-ReactDOM.render(<User name="Andy" age="26"/>, document.getElementById('app'));
+ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
