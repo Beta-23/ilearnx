@@ -278,21 +278,23 @@ var AddOption = function (_React$Component6) {
 // stateless functional component for User
 
 
-var User = function User() {
+var User = function User(props) {
     return React.createElement(
         'div',
         null,
         React.createElement(
             'p',
             null,
-            'Name: '
+            'Name: ',
+            props.name
         ),
         React.createElement(
             'p',
             null,
-            'Age: '
+            'Age: ',
+            props.age
         )
     );
 };
 
-ReactDOM.render(React.createElement(User, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(User, { name: 'Andy', age: '26' }), document.getElementById('app'));
