@@ -95,7 +95,7 @@ var IlearnxApp = function (_React$Component) {
     return IlearnxApp;
 }(React.Component);
 
-// stateless functional component for User
+// Header stateless functional component for User
 
 
 var Header = function Header(props) {
@@ -115,7 +115,7 @@ var Header = function Header(props) {
     );
 };
 
-// stateless functional component for User
+// Action stateless functional component for User
 var Action = function Action(props) {
     return React.createElement(
         'div',
@@ -131,7 +131,7 @@ var Action = function Action(props) {
     );
 };
 
-// stateless functional component for User
+// Options stateless functional component for User
 var Options = function Options(props) {
     return React.createElement(
         'div',
@@ -157,6 +157,7 @@ var Options = function Options(props) {
     );
 };
 
+// Option stateless functional component for User
 var Option = function Option(props) {
     return React.createElement(
         'div',
@@ -164,16 +165,6 @@ var Option = function Option(props) {
         props.optionText
     );
 };
-
-// class Option extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 {this.props.optionText}
-//             </div>
-//         );
-//     }
-// }
 
 var AddOption = function (_React$Component2) {
     _inherits(AddOption, _React$Component2);
@@ -229,15 +220,5 @@ var AddOption = function (_React$Component2) {
 
     return AddOption;
 }(React.Component);
-
-// stateless functional component for User
-// const User = (props) => {
-//     return (
-//         <div>
-//             <p>Name: {props.name}</p>
-//             <p>Age: {props.age}</p>
-//         </div>
-//     );
-// };
 
 ReactDOM.render(React.createElement(IlearnxApp, null), document.getElementById('app'));

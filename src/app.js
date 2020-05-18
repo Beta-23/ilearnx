@@ -63,7 +63,7 @@ class IlearnxApp extends React.Component {
     }
 }
 
-// stateless functional component for User
+// Header stateless functional component for User
 const Header = (props) => {
     return (
         <div>
@@ -73,7 +73,7 @@ const Header = (props) => {
     );
 }
 
-// stateless functional component for User
+// Action stateless functional component for User
 const Action = (props) => {
     return (
         <div>
@@ -87,7 +87,7 @@ const Action = (props) => {
     );
 }
 
-// stateless functional component for User
+// Options stateless functional component for User
 const Options = (props) => {
     return (
         <div>
@@ -107,6 +107,7 @@ const Options = (props) => {
     ); 
 }
 
+// Option stateless functional component for User
 const Option = (props) => {
     return (
         <div>
@@ -114,16 +115,6 @@ const Option = (props) => {
         </div>
     );
 }
-
-// class Option extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 {this.props.optionText}
-//             </div>
-//         );
-//     }
-// }
 
 class AddOption extends React.Component {
     constructor(props) {
@@ -155,15 +146,5 @@ class AddOption extends React.Component {
         );
     }
 }
-
-// stateless functional component for User
-// const User = (props) => {
-//     return (
-//         <div>
-//             <p>Name: {props.name}</p>
-//             <p>Age: {props.age}</p>
-//         </div>
-//     );
-// };
 
 ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
