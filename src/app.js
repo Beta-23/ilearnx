@@ -5,7 +5,7 @@ class IlearnxApp extends React.Component {
         this.handlePickOptions=this.handlePickOptions.bind(this);
         this.handleAddOption=this.handleAddOption.bind(this);
         this.state = {
-            options: []
+            options: props.options
         };
     }
     // Event handler
@@ -40,12 +40,11 @@ class IlearnxApp extends React.Component {
     }
 
     render() {
-        const title = 'iLearnx App';
         const subtitle = 'Let an al·go·rithm show your learning path!';
 
         return (
             <div>
-                <Header title={title} subtitle={subtitle}/>
+                <Header subtitle={subtitle}/>
                 <Action 
                 hasOptions={ this.state.options.length > 0 } 
                 handlePickOptions={this.handlePickOptions}
@@ -63,14 +62,22 @@ class IlearnxApp extends React.Component {
     }
 }
 
+IlearnxApp.defaultProps = {
+    options: []
+}
+
 // Header stateless functional component for User
 const Header = (props) => {
     return (
         <div>
             <h1>{props.title}</h1>
-            <h2>{props.subtitle}</h2>
+            {props.subtitle && <h2>{props.subtitle}</h2>}
         </div>
     );
+}
+
+Header.defaultProps = {
+    title: 'iLearnx App'
 }
 
 // Action stateless functional component for User
@@ -147,4 +154,4 @@ class AddOption extends React.Component {
     }
 }
 
-ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
+ReactDOM.render(<IlearnxApp options={['JavaScript', 'Javascript', 'Ruby']}/>, document.getElementById('app'));
