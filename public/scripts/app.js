@@ -20,7 +20,7 @@ var IlearnxApp = function (_React$Component) {
         _this.handlePickOptions = _this.handlePickOptions.bind(_this);
         _this.handleAddOption = _this.handleAddOption.bind(_this);
         _this.state = {
-            options: []
+            options: props.options
         };
         return _this;
     }
@@ -94,10 +94,11 @@ var IlearnxApp = function (_React$Component) {
     return IlearnxApp;
 }(React.Component);
 
-// Header stateless functional component for User
+IlearnxApp.defaultProps = {
+    options: []
 
-
-var Header = function Header(props) {
+    // Header stateless functional component for User
+};var Header = function Header(props) {
     return React.createElement(
         'div',
         null,
@@ -223,4 +224,4 @@ var AddOption = function (_React$Component2) {
     return AddOption;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IlearnxApp, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(IlearnxApp, { options: ['JavaScript', 'Javascript', 'Ruby'] }), document.getElementById('app'));

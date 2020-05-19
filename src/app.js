@@ -5,7 +5,7 @@ class IlearnxApp extends React.Component {
         this.handlePickOptions=this.handlePickOptions.bind(this);
         this.handleAddOption=this.handleAddOption.bind(this);
         this.state = {
-            options: []
+            options: props.options
         };
     }
     // Event handler
@@ -60,6 +60,10 @@ class IlearnxApp extends React.Component {
             </div>
         );
     }
+}
+
+IlearnxApp.defaultProps = {
+    options: []
 }
 
 // Header stateless functional component for User
@@ -150,4 +154,4 @@ class AddOption extends React.Component {
     }
 }
 
-ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
+ReactDOM.render(<IlearnxApp options={['JavaScript', 'Javascript', 'Ruby']}/>, document.getElementById('app'));
