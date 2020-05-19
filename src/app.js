@@ -40,12 +40,11 @@ class IlearnxApp extends React.Component {
     }
 
     render() {
-        const title = 'iLearnx App';
         const subtitle = 'Let an al·go·rithm show your learning path!';
 
         return (
             <div>
-                <Header title={title} subtitle={subtitle}/>
+                <Header subtitle={subtitle}/>
                 <Action 
                 hasOptions={ this.state.options.length > 0 } 
                 handlePickOptions={this.handlePickOptions}
@@ -71,6 +70,10 @@ const Header = (props) => {
             <h2>{props.subtitle}</h2>
         </div>
     );
+}
+
+Header.defaultProps = {
+    title: 'iLearnx App'
 }
 
 // Action stateless functional component for User

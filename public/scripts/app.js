@@ -69,13 +69,12 @@ var IlearnxApp = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var title = 'iLearnx App';
             var subtitle = 'Let an al·go·rithm show your learning path!';
 
             return React.createElement(
                 'div',
                 null,
-                React.createElement(Header, { title: title, subtitle: subtitle }),
+                React.createElement(Header, { subtitle: subtitle }),
                 React.createElement(Action, {
                     hasOptions: this.state.options.length > 0,
                     handlePickOptions: this.handlePickOptions
@@ -115,8 +114,11 @@ var Header = function Header(props) {
     );
 };
 
-// Action stateless functional component for User
-var Action = function Action(props) {
+Header.defaultProps = {
+    title: 'iLearnx App'
+
+    // Action stateless functional component for User
+};var Action = function Action(props) {
     return React.createElement(
         'div',
         null,
