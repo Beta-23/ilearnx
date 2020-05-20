@@ -8,14 +8,11 @@ class IlearnxApp extends React.Component {
             options: props.options
         };
     }
-    // Event handler
+    // Event handler implicit setState
     handleDeleteOptions() {
-        this.setState(() => {
-            return {
-                options: []
-            }
-        });
+        this.setState(() => ({ options: [] }));
     }
+
     // Event handler
     handlePickOptions() {
         this.setState(() => {

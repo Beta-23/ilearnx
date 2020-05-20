@@ -24,18 +24,17 @@ var IlearnxApp = function (_React$Component) {
         };
         return _this;
     }
-    // Event handler
+    // Event handler implicit setState
 
 
     _createClass(IlearnxApp, [{
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             this.setState(function () {
-                return {
-                    options: []
-                };
+                return { options: [] };
             });
         }
+
         // Event handler
 
     }, {
