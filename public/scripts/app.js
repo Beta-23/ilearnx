@@ -178,7 +178,8 @@ var Option = function Option(props) {
         props.optionText,
         React.createElement(
             'button',
-            { onClick: function onClick(e) {
+            {
+                onClick: function onClick(e) {
                     props.handleDeleteIndividualOption(props.optionText);
                 }
             },

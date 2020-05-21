@@ -16,9 +16,7 @@ class IlearnxApp extends React.Component {
 
     handleDeleteIndividualOption(optionToRemove) {
         this.setState((prevState) => ({
-            options: prevState.options.filter((option) => {
-                return optionToRemove !== option;
-            })
+            options: prevState.options.filter((option) => optionToRemove !== option)
         }));
     }
     // Event handler
@@ -126,7 +124,8 @@ const Option = (props) => {
     return (
         <div>
             {props.optionText}
-            <button onClick={(e) => {
+            <button 
+                onClick={(e) => {
                 props.handleDeleteIndividualOption(props.optionText)
             }}
             >
