@@ -24,7 +24,7 @@ var IlearnxApp = function (_React$Component) {
         };
         return _this;
     }
-    // Event handler implicit setState
+    // Event handler implicit setState object
 
 
     _createClass(IlearnxApp, [{
@@ -40,13 +40,9 @@ var IlearnxApp = function (_React$Component) {
     }, {
         key: 'handlePickOptions',
         value: function handlePickOptions() {
-            var _this2 = this;
-
-            this.setState(function () {
-                var randomNum = Math.floor(Math.random() * _this2.state.options.length);
-                var option = _this2.state.options[randomNum];
-                return alert('Our pick is: ' + option);
-            });
+            var randomNum = Math.floor(Math.random() * this.state.options.length);
+            var option = this.state.options[randomNum];
+            return alert('Our pick is: ' + option);
         }
         // Event handler from child
 
@@ -58,11 +54,8 @@ var IlearnxApp = function (_React$Component) {
             } else if (this.state.options.indexOf(option) > -1) {
                 return alert('This language is already in you choices!');
             }
-
             this.setState(function (prevState) {
-                return {
-                    options: prevState.options.concat(option)
-                };
+                return { options: prevState.options.concat(option) };
             });
         }
     }, {
@@ -174,13 +167,13 @@ var AddOption = function (_React$Component2) {
     function AddOption(props) {
         _classCallCheck(this, AddOption);
 
-        var _this3 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
+        var _this2 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
 
-        _this3.handleAddOption = _this3.handleAddOption.bind(_this3);
-        _this3.state = {
+        _this2.handleAddOption = _this2.handleAddOption.bind(_this2);
+        _this2.state = {
             error: undefined
         };
-        return _this3;
+        return _this2;
     }
 
     _createClass(AddOption, [{

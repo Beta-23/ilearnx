@@ -8,18 +8,16 @@ class IlearnxApp extends React.Component {
             options: props.options
         };
     }
-    // Event handler implicit setState
+    // Event handler implicit setState object
     handleDeleteOptions() {
         this.setState(() => ({ options: [] }));
     }
 
     // Event handler
     handlePickOptions() {
-        this.setState(() => {
             const randomNum = Math.floor(Math.random() * this.state.options.length);
             const option = this.state.options[randomNum];
             return alert(`Our pick is: ${option}`)
-        });
     }
     // Event handler from child
     handleAddOption(option) {
@@ -28,12 +26,7 @@ class IlearnxApp extends React.Component {
         } else if (this.state.options.indexOf(option) > -1) {
             return alert('This language is already in you choices!');
         } 
-
-        this.setState((prevState) => {
-            return {
-                options: prevState.options.concat(option)
-            };
-        });
+        this.setState((prevState) => ({ options: prevState.options.concat(option) }));
     }
 
     render() {
@@ -134,9 +127,7 @@ class AddOption extends React.Component {
         const option = e.target.elements.option.value.trim();
         const error = this.props.handleAddOption(option); 
 
-        this.setState(() => {
-            return { error };
-        });
+        this.setState(() => ({ error }));
     }
     render() {
         return (
