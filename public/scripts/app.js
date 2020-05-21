@@ -19,20 +19,30 @@ var IlearnxApp = function (_React$Component) {
         _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
         _this.handlePickOptions = _this.handlePickOptions.bind(_this);
         _this.handleAddOption = _this.handleAddOption.bind(_this);
+        _this.handleDeleteIndividualOption = _this.handleDeleteIndividualOption.bind(_this);
         _this.state = {
             options: props.options
         };
         return _this;
     }
-    // Event handler
+    // Event handler implicit setState object
 
 
     _createClass(IlearnxApp, [{
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             this.setState(function () {
+                return { options: [] };
+            });
+        }
+    }, {
+        key: 'handleDeleteIndividualOption',
+        value: function handleDeleteIndividualOption(optionToRemove) {
+            this.setState(function (prevState) {
                 return {
-                    options: []
+                    options: prevState.options.filter(function (option) {
+                        return optionToRemove !== option;
+                    })
                 };
             });
         }
@@ -41,13 +51,9 @@ var IlearnxApp = function (_React$Component) {
     }, {
         key: 'handlePickOptions',
         value: function handlePickOptions() {
-            var _this2 = this;
-
-            this.setState(function () {
-                var randomNum = Math.floor(Math.random() * _this2.state.options.length);
-                var option = _this2.state.options[randomNum];
-                return alert('Our pick is: ' + option);
-            });
+            var randomNum = Math.floor(Math.random() * this.state.options.length);
+            var option = this.state.options[randomNum];
+            return alert('Our pick is: ' + option);
         }
         // Event handler from child
 
@@ -81,7 +87,8 @@ var IlearnxApp = function (_React$Component) {
                 }),
                 React.createElement(Options, {
                     options: this.state.options,
-                    handleDeleteOptions: this.handleDeleteOptions
+                    handleDeleteOptions: this.handleDeleteOptions,
+                    handleDeleteIndividualOption: this.handleDeleteIndividualOption
                 }),
                 React.createElement('br', null),
                 React.createElement(AddOption, {
@@ -139,14 +146,17 @@ var Options = function Options(props) {
     return React.createElement(
         'div',
         null,
-        React.createElement(Option, null),
         React.createElement(
             'p',
             null,
             props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'
         ),
         props.options.map(function (option) {
-            return React.createElement(Option, { key: option, optionText: option });
+            return React.createElement(Option, {
+                key: option,
+                optionText: option,
+                handleDeleteIndividualOption: props.handleDeleteIndividualOption
+            });
         }),
         React.createElement('br', null),
         React.createElement(
@@ -165,7 +175,16 @@ var Option = function Option(props) {
     return React.createElement(
         'div',
         null,
-        props.optionText
+        props.optionText,
+        React.createElement(
+            'button',
+            {
+                onClick: function onClick(e) {
+                    props.handleDeleteIndividualOption(props.optionText);
+                }
+            },
+            'Remove Item'
+        )
     );
 };
 
@@ -175,13 +194,13 @@ var AddOption = function (_React$Component2) {
     function AddOption(props) {
         _classCallCheck(this, AddOption);
 
-        var _this3 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
+        var _this2 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
 
-        _this3.handleAddOption = _this3.handleAddOption.bind(_this3);
-        _this3.state = {
+        _this2.handleAddOption = _this2.handleAddOption.bind(_this2);
+        _this2.state = {
             error: undefined
         };
-        return _this3;
+        return _this2;
     }
 
     _createClass(AddOption, [{
@@ -224,4 +243,4 @@ var AddOption = function (_React$Component2) {
     return AddOption;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IlearnxApp, { options: ['JavaScript', 'Javascript', 'Ruby'] }), document.getElementById('app'));
+ReactDOM.render(React.createElement(IlearnxApp, { options: ['JS', 'React', 'Angular'] }), document.getElementById('app'));

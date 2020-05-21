@@ -4,25 +4,26 @@ class IlearnxApp extends React.Component {
         this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
         this.handlePickOptions=this.handlePickOptions.bind(this);
         this.handleAddOption=this.handleAddOption.bind(this);
+        this.handleDeleteIndividualOption=this.handleDeleteIndividualOption.bind(this);
         this.state = {
             options: props.options
         };
     }
-    // Event handler
+    // Event handler implicit setState object
     handleDeleteOptions() {
-        this.setState(() => {
-            return {
-                options: []
-            }
-        });
+        this.setState(() => ({ options: [] }));
+    }
+
+    handleDeleteIndividualOption(optionToRemove) {
+        this.setState((prevState) => ({
+            options: prevState.options.filter((option) => optionToRemove !== option)
+        }));
     }
     // Event handler
     handlePickOptions() {
-        this.setState(() => {
             const randomNum = Math.floor(Math.random() * this.state.options.length);
             const option = this.state.options[randomNum];
             return alert(`Our pick is: ${option}`)
-        });
     }
     // Event handler from child
     handleAddOption(option) {
@@ -32,11 +33,9 @@ class IlearnxApp extends React.Component {
             return alert('This language is already in you choices!');
         } 
 
-        this.setState((prevState) => {
-            return {
-                options: prevState.options.concat(option)
-            };
-        });
+        this.setState((prevState) => ({ 
+            options: prevState.options.concat(option) 
+        }));
     }
 
     render() {
@@ -52,6 +51,7 @@ class IlearnxApp extends React.Component {
                 <Options 
                     options={this.state.options} 
                     handleDeleteOptions={this.handleDeleteOptions}
+                    handleDeleteIndividualOption={this.handleDeleteIndividualOption}
                 />
                 <br />
                 <AddOption
@@ -98,10 +98,15 @@ const Action = (props) => {
 const Options = (props) => {
     return (
         <div>
-            <Option />
             <p>{props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
             {
-                props.options.map((option) => <Option key={option} optionText={option}/>)
+                props.options.map((option) => (
+                    <Option 
+                     key={option} 
+                     optionText={option} 
+                     handleDeleteIndividualOption={props.handleDeleteIndividualOption}
+                    />
+                ))
             } 
             <br />
             <button 
@@ -119,6 +124,13 @@ const Option = (props) => {
     return (
         <div>
             {props.optionText}
+            <button 
+                onClick={(e) => {
+                props.handleDeleteIndividualOption(props.optionText)
+            }}
+            >
+            Remove Item
+            </button>
         </div>
     );
 }
@@ -137,9 +149,7 @@ class AddOption extends React.Component {
         const option = e.target.elements.option.value.trim();
         const error = this.props.handleAddOption(option); 
 
-        this.setState(() => {
-            return { error };
-        });
+        this.setState(() => ({ error }));
     }
     render() {
         return (
@@ -154,4 +164,4 @@ class AddOption extends React.Component {
     }
 }
 
-ReactDOM.render(<IlearnxApp options={['JavaScript', 'Javascript', 'Ruby']}/>, document.getElementById('app'));
+ReactDOM.render(<IlearnxApp options={['JS','React','Angular']}/>, document.getElementById('app'));
