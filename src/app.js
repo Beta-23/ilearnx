@@ -9,19 +9,19 @@ class IlearnxApp extends React.Component {
             options: props.options
         };
     }
-
+    // Lifecycle methods
     componentDidMount() {
-        console.log('App is loading...');
+        console.log('Fetching Data');
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log('App is Updating...');
+        console.log('Saving Data');
     }
 
     componentWillUnmount() {
         console.log('App WillUnmount!');
     }
-    
+
     // Event handler implicit setState object
     handleDeleteOptions() {
         this.setState(() => ({ options: [] }));

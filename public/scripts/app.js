@@ -25,16 +25,18 @@ var IlearnxApp = function (_React$Component) {
         };
         return _this;
     }
+    // Lifecycle methods
+
 
     _createClass(IlearnxApp, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('App is loading...');
+            console.log('Fetching Data');
         }
     }, {
         key: 'componentDidUpdate',
         value: function componentDidUpdate(prevProps, prevState) {
-            console.log('App is Updating...');
+            console.log('Saving Data');
         }
     }, {
         key: 'componentWillUnmount',
