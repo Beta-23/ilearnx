@@ -18,6 +18,10 @@ class IlearnxApp extends React.Component {
         console.log('App is Updating...');
     }
 
+    componentWillUnmount() {
+        console.log('App WillUnmount!');
+    }
+    
     // Event handler implicit setState object
     handleDeleteOptions() {
         this.setState(() => ({ options: [] }));

@@ -36,6 +36,11 @@ var IlearnxApp = function (_React$Component) {
         value: function componentDidUpdate(prevProps, prevState) {
             console.log('App is Updating...');
         }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('App WillUnmount!');
+        }
 
         // Event handler implicit setState object
 
