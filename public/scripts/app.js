@@ -31,6 +31,11 @@ var IlearnxApp = function (_React$Component) {
         value: function componentDidMount() {
             console.log('App is loading...');
         }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            console.log('App is Updating...');
+        }
 
         // Event handler implicit setState object
 

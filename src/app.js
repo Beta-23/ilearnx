@@ -14,6 +14,10 @@ class IlearnxApp extends React.Component {
         console.log('App is loading...');
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        console.log('App is Updating...');
+    }
+
     // Event handler implicit setState object
     handleDeleteOptions() {
         this.setState(() => ({ options: [] }));
