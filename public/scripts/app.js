@@ -25,10 +25,28 @@ var IlearnxApp = function (_React$Component) {
         };
         return _this;
     }
-    // Event handler implicit setState object
+    // Lifecycle methods
 
 
     _createClass(IlearnxApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('Fetching Data');
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            console.log('Saving Data');
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('App WillUnmount!');
+        }
+
+        // Event handler implicit setState object
+
+    }, {
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             this.setState(function () {
