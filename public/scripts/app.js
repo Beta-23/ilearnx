@@ -25,10 +25,16 @@ var IlearnxApp = function (_React$Component) {
         };
         return _this;
     }
-    // Event handler implicit setState object
-
 
     _createClass(IlearnxApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('App is loading...');
+        }
+
+        // Event handler implicit setState object
+
+    }, {
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             this.setState(function () {
