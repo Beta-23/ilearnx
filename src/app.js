@@ -15,7 +15,12 @@ class IlearnxApp extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log('Saving Data');
+        if (prevState.options.length !== this.state.options.length) {
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json);
+            console.log('Saving Data to Local Storage!');
+        }
+        
     }
 
     componentWillUnmount() {

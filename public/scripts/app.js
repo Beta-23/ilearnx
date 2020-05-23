@@ -36,7 +36,11 @@ var IlearnxApp = function (_React$Component) {
     }, {
         key: 'componentDidUpdate',
         value: function componentDidUpdate(prevProps, prevState) {
-            console.log('Saving Data');
+            if (prevState.options.length !== this.state.options.length) {
+                var json = JSON.stringify(this.state.options);
+                localStorage.setItem('options', json);
+                console.log('Saving Data to Local Storage!');
+            }
         }
     }, {
         key: 'componentWillUnmount',
