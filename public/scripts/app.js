@@ -199,6 +199,11 @@ var Options = function Options(props) {
                 onClick: props.handleDeleteOptions
             },
             'Remove All'
+        ),
+        props.options.length === 0 && React.createElement(
+            'p',
+            null,
+            'Please Add Your Langueage Choice to get Started!'
         )
     );
 };
@@ -270,7 +275,7 @@ var AddOption = function (_React$Component2) {
                     React.createElement(
                         'button',
                         null,
-                        'Add Your Langueage Choice'
+                        'Add Your Langueage'
                     )
                 )
             );
@@ -280,4 +285,4 @@ var AddOption = function (_React$Component2) {
     return AddOption;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IlearnxApp, { options: ['JS', 'React', 'Angular'] }), document.getElementById('app'));
+ReactDOM.render(React.createElement(IlearnxApp, null), document.getElementById('app'));

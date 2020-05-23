@@ -143,6 +143,8 @@ const Options = (props) => {
                 >
                 Remove All
             </button>
+            { props.options.length === 0 && 
+            <p>Please Add Your Langueage Choice to get Started!</p> }
         </div>
     ); 
 }
@@ -189,11 +191,11 @@ class AddOption extends React.Component {
                 { this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.handleAddOption}>
                 <input type="text" name="option" />
-                <button>Add Your Langueage Choice</button>
+                <button>Add Your Langueage</button>
                 </form>   
             </div>
         );
     }
 }
 
-ReactDOM.render(<IlearnxApp options={['JS','React','Angular']}/>, document.getElementById('app'));
+ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
