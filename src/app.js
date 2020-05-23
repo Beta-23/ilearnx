@@ -11,10 +11,17 @@ class IlearnxApp extends React.Component {
     }
     // Lifecycle methods
     componentDidMount() {
-        const json = localStorage.getItem('options');
-        const options = JSON.parse(json);
+        try {
+            const json = localStorage.getItem('options');
+            const options = JSON.parse(json);
 
-        this.setState(() => ({ options }));
+            if (option) {
+                this.setState(() => ({ options })); 
+            }
+
+            } catch (e) {
+                // Do nothing at all  
+        }   
     }
 
     componentDidUpdate(prevProps, prevState) {

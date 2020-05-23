@@ -31,12 +31,18 @@ var IlearnxApp = function (_React$Component) {
     _createClass(IlearnxApp, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var json = localStorage.getItem('options');
-            var options = JSON.parse(json);
+            try {
+                var json = localStorage.getItem('options');
+                var options = JSON.parse(json);
 
-            this.setState(function () {
-                return { options: options };
-            });
+                if (option) {
+                    this.setState(function () {
+                        return { options: options };
+                    });
+                }
+            } catch (e) {
+                // Do nothing at all  
+            }
         }
     }, {
         key: 'componentDidUpdate',
