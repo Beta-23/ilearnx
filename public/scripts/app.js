@@ -31,7 +31,12 @@ var IlearnxApp = function (_React$Component) {
     _createClass(IlearnxApp, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('Fetching Data');
+            var json = localStorage.getItem('options');
+            var options = JSON.parse(json);
+
+            this.setState(function () {
+                return { options: options };
+            });
         }
     }, {
         key: 'componentDidUpdate',
