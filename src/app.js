@@ -11,11 +11,26 @@ class IlearnxApp extends React.Component {
     }
     // Lifecycle methods
     componentDidMount() {
-        console.log('Fetching Data');
+        try {
+            const json = localStorage.getItem('options');
+            const options = JSON.parse(json);
+
+            if (option) {
+                this.setState(() => ({ options })); 
+            }
+
+            } catch (e) {
+                // Do nothing at all  
+        }   
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log('Saving Data');
+        if (prevState.options.length !== this.state.options.length) {
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json);
+            console.log('Saving Data to Local Storage!');
+        }
+        
     }
 
     componentWillUnmount() {
@@ -128,6 +143,8 @@ const Options = (props) => {
                 >
                 Remove All
             </button>
+            { props.options.length === 0 && 
+            <p>Please Add Your Langueage Choice to get Started!</p> }
         </div>
     ); 
 }
@@ -163,6 +180,10 @@ class AddOption extends React.Component {
         const error = this.props.handleAddOption(option); 
 
         this.setState(() => ({ error }));
+
+        if (!error) {
+            e.target.elements.option.value = '';
+        }
     }
     render() {
         return (
@@ -170,11 +191,11 @@ class AddOption extends React.Component {
                 { this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.handleAddOption}>
                 <input type="text" name="option" />
-                <button>Add Your Langueage Choice</button>
+                <button>Add Your Langueage</button>
                 </form>   
             </div>
         );
     }
 }
 
-ReactDOM.render(<IlearnxApp options={['JS','React','Angular']}/>, document.getElementById('app'));
+ReactDOM.render(<IlearnxApp />, document.getElementById('app'));

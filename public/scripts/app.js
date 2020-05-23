@@ -31,12 +31,27 @@ var IlearnxApp = function (_React$Component) {
     _createClass(IlearnxApp, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('Fetching Data');
+            try {
+                var json = localStorage.getItem('options');
+                var options = JSON.parse(json);
+
+                if (option) {
+                    this.setState(function () {
+                        return { options: options };
+                    });
+                }
+            } catch (e) {
+                // Do nothing at all  
+            }
         }
     }, {
         key: 'componentDidUpdate',
         value: function componentDidUpdate(prevProps, prevState) {
-            console.log('Saving Data');
+            if (prevState.options.length !== this.state.options.length) {
+                var json = JSON.stringify(this.state.options);
+                localStorage.setItem('options', json);
+                console.log('Saving Data to Local Storage!');
+            }
         }
     }, {
         key: 'componentWillUnmount',
@@ -184,6 +199,11 @@ var Options = function Options(props) {
                 onClick: props.handleDeleteOptions
             },
             'Remove All'
+        ),
+        props.options.length === 0 && React.createElement(
+            'p',
+            null,
+            'Please Add Your Langueage Choice to get Started!'
         )
     );
 };
@@ -232,6 +252,10 @@ var AddOption = function (_React$Component2) {
             this.setState(function () {
                 return { error: error };
             });
+
+            if (!error) {
+                e.target.elements.option.value = '';
+            }
         }
     }, {
         key: 'render',
@@ -251,7 +275,7 @@ var AddOption = function (_React$Component2) {
                     React.createElement(
                         'button',
                         null,
-                        'Add Your Langueage Choice'
+                        'Add Your Langueage'
                     )
                 )
             );
@@ -261,4 +285,4 @@ var AddOption = function (_React$Component2) {
     return AddOption;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IlearnxApp, { options: ['JS', 'React', 'Angular'] }), document.getElementById('app'));
+ReactDOM.render(React.createElement(IlearnxApp, null), document.getElementById('app'));
