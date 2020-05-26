@@ -46,7 +46,7 @@ var Counter = function (_React$Component) {
         value: function componentDidUpdate(prevProps, prevState) {
             if (prevState.count !== this.state.count) {
                 localStorage.setItem('count', this.state.count);
-                // console.log('Saving count Data to Local Storage!');
+                console.log('Saving count Data to Local Storage!');
             }
         }
     }, {
