@@ -17,13 +17,14 @@ class Counter extends React.Component {
 
         if (!isNaN(count)) {
             this.setState(() => ({ count })); 
+            console.log('Component mounted sucessfully!');
         }  
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState.count !== this.state.count) {
             localStorage.setItem('count', this.state.count);
-            console.log('Saving count Data to Local Storage!');
+            // console.log('Saving count Data to Local Storage!');
         }  
     }
     
