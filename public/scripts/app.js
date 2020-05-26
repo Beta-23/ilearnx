@@ -21,7 +21,7 @@ var IlearnxApp = function (_React$Component) {
         _this.handleAddOption = _this.handleAddOption.bind(_this);
         _this.handleDeleteIndividualOption = _this.handleDeleteIndividualOption.bind(_this);
         _this.state = {
-            options: props.options
+            options: []
         };
         return _this;
     }
@@ -134,11 +134,10 @@ var IlearnxApp = function (_React$Component) {
     return IlearnxApp;
 }(React.Component);
 
-IlearnxApp.defaultProps = {
-    options: []
+// Header stateless functional component for User
 
-    // Header stateless functional component for User
-};var Header = function Header(props) {
+
+var Header = function Header(props) {
     return React.createElement(
         'div',
         null,

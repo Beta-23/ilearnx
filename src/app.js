@@ -6,7 +6,7 @@ class IlearnxApp extends React.Component {
         this.handleAddOption=this.handleAddOption.bind(this);
         this.handleDeleteIndividualOption=this.handleDeleteIndividualOption.bind(this);
         this.state = {
-            options: props.options
+            options: []
         };
     }
     // Lifecycle methods
@@ -88,10 +88,6 @@ class IlearnxApp extends React.Component {
             </div>
         );
     }
-}
-
-IlearnxApp.defaultProps = {
-    options: []
 }
 
 // Header stateless functional component for User
