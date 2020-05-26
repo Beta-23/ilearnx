@@ -29,28 +29,11 @@ var Counter = function (_React$Component) {
 
 
     _createClass(Counter, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            try {
-                var json = localStorage.getItem('count');
-                var count = JSON.parse(json);
-
-                if (count) {
-                    this.setState(function () {
-                        return { count: count };
-                    });
-                }
-            } catch (e) {
-                // Do nothing at all  
-            }
-        }
-    }, {
         key: 'componentDidUpdate',
         value: function componentDidUpdate(prevProps, prevState) {
-            if (prevState.count.length !== this.state.count.length) {
-                var json = JSON.stringify(this.state.count);
-                localStorage.setItem('count', json);
-                console.log('Saving Data to Local Storage!');
+            if (prevState.count !== this.state.count) {
+                localStorage.setItem('count', this.state.count);
+                console.log('Saving count Data to Local Storage!');
             }
         }
     }, {
