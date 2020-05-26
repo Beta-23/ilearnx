@@ -9,6 +9,21 @@ class Counter extends React.Component {
             count: 0
         };
     }
+
+     // Lifecycle methods
+     componentDidMount() {
+        try {
+            const json = localStorage.getItem('count');
+            const count = JSON.parse(json);
+
+            if (count) {
+                this.setState(() => ({ count })); 
+            }
+
+            } catch (e) {
+                // Do nothing at all  
+        }   
+    }
     
     handleAddOne() { 
         this.setState((prevState) => {
@@ -52,4 +67,4 @@ class Counter extends React.Component {
     }
 }
 
-ReactDOM.render(<Counter count={1}/>, document.getElementById('app'));
+ReactDOM.render(<Counter />, document.getElementById('app'));
