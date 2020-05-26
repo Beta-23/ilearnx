@@ -45,6 +45,15 @@ var Counter = function (_React$Component) {
             }
         }
     }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            if (prevState.count.length !== this.state.count.length) {
+                var json = JSON.stringify(this.state.count);
+                localStorage.setItem('count', json);
+                console.log('Saving Data to Local Storage!');
+            }
+        }
+    }, {
         key: 'handleAddOne',
         value: function handleAddOne() {
             this.setState(function (prevState) {

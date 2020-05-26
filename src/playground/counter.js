@@ -24,6 +24,15 @@ class Counter extends React.Component {
                 // Do nothing at all  
         }   
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.count.length !== this.state.count.length) {
+            const json = JSON.stringify(this.state.count);
+            localStorage.setItem('count', json);
+            console.log('Saving Data to Local Storage!');
+        }
+        
+    }
     
     handleAddOne() { 
         this.setState((prevState) => {
