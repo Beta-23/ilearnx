@@ -1,5 +1,5 @@
 // import subtract, { square, add } from './utils';
-import isSenior, { isAdult, canDrink } from './person';
+// import isSenior, { isAdult, canDrink } from './person';
 
 // Testing utils
 // console.log(square(4));
@@ -9,4 +9,7 @@ import isSenior, { isAdult, canDrink } from './person';
 // Testing person utils
 // console.log(isAdult(14));
 // console.log(canDrink(23));
-console.log(isSenior(64));
+// console.log(isSenior(64));
+
+import validator from 'validator';
+
