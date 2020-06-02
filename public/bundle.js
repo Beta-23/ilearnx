@@ -80,9 +80,12 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* square */](4));
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return square; });
+/* unused harmony export add */
 console.log('utils.js is running!!')
 
 const square = (x) => x * x;
+
+const add = (a, b) => a + b;
 
 
 
