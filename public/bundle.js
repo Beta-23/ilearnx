@@ -77,8 +77,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](4));
 console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](2) + __WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](3,4));
 
-console.log(__WEBPACK_IMPORTED_MODULE_1__person__["b" /* isAdult */](19));
-console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* canDrink */](20));
+console.log(__WEBPACK_IMPORTED_MODULE_1__person__["b" /* isAdult */](14));
+console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* canDrink */](23));
 
 /***/ }),
 /* 1 */
@@ -101,17 +101,17 @@ const add = (a, b) => a + b;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isAdult; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
 console.log('person.js is running!!')
 // Age returns true else false
 const isAdult = (age) => age >= 18;
+/* harmony export (immutable) */ __webpack_exports__["b"] = isAdult;
+
 
 // Age returns true else false
 const canDrink = (over21) => over21 >= 21;
+/* harmony export (immutable) */ __webpack_exports__["a"] = canDrink;
+
  
-
-
 
 
 
