@@ -104,22 +104,12 @@ const add = (a, b) => a + b;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isAdult; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
 console.log('person.js is running!!')
+// Age returns true else false
+const isAdult = (age) => age >= 18;
 
-const isAdult = (age) => {
-    if (age >= 18) {
-        console.log('You are an Adult!')
-    } else {
-        console.log('You must be 18 or older to play!')
-    }  
-}
-
-const canDrink = (over21) => {
-    if (over21 >=21) {
-        alert('You are old to drink Alcohol!')
-    } else {
-        console.log('You need to go home!')
-    }
-}
+// Age returns true else false
+const canDrink = (over21) => over21 >= 21;
+ 
 
 
 
