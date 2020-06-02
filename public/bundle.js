@@ -70,10 +70,14 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__person__ = __webpack_require__(2);
+
 
 
 console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](4));
 console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](2) + __WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](3,4));
+
+console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* isAdult */](2));
 
 /***/ }),
 /* 1 */
@@ -87,6 +91,28 @@ console.log('utils.js is running!!')
 const square = (x) => x * x;
 
 const add = (a, b) => a + b;
+
+
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isAdult; });
+console.log('person.js is running!!')
+
+const isAdult = (age) => {
+    if (age >= 18) {
+        console.log('You are an Adult!')
+    } else {
+        alert('You must be 18 or older to play!')
+    }  
+}
+
+
+
 
 
 
