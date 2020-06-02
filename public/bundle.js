@@ -77,7 +77,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](4));
 console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](2) + __WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](3,4));
 
-console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* isAdult */](2));
+console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* isAdult */](19));
+
 
 /***/ }),
 /* 1 */
@@ -101,14 +102,23 @@ const add = (a, b) => a + b;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isAdult; });
+/* unused harmony export canDrink */
 console.log('person.js is running!!')
 
 const isAdult = (age) => {
     if (age >= 18) {
         console.log('You are an Adult!')
     } else {
-        alert('You must be 18 or older to play!')
+        console.log('You must be 18 or older to play!')
     }  
+}
+
+const canDrink = (over21) => {
+    if (over21 >=21) {
+        alert('You are old to drink Alcohol!')
+    } else {
+        console.log('You need to go home!')
+    }
 }
 
 

@@ -4,11 +4,19 @@ const isAdult = (age) => {
     if (age >= 18) {
         console.log('You are an Adult!')
     } else {
-        alert('You must be 18 or older to play!')
+        console.log('You must be 18 or older to play!')
     }  
 }
 
-export { isAdult };
+const canDrink = (over21) => {
+    if (over21 >=21) {
+        alert('You are old to drink Alcohol!')
+    } else {
+        console.log('You need to go home!')
+    }
+}
+
+export { isAdult, canDrink };
 
 
 
