@@ -8,3 +8,4 @@ export const canDrink = (over21) => over21 >= 21;
 
 
 
+

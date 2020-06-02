@@ -70,49 +70,31 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__person__ = __webpack_require__(2);
 
+// import { isAdult, canDrink } from './person';
 
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* square */](4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* square */](2) + __WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](3,4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* default */](100, 50));
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](4));
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](2) + __WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](3,4));
-
-console.log(__WEBPACK_IMPORTED_MODULE_1__person__["b" /* isAdult */](14));
-console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* canDrink */](23));
+// console.log(isAdult(14));
+// console.log(canDrink(23));
 
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return square; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return square; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return subtract; });
 console.log('utils.js is running!!')
 
 const square = (x) => x * x;
 
 const add = (a, b) => a + b;
 
-
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-console.log('person.js is running!!')
-// Age returns true else false
-const isAdult = (age) => age >= 18;
-/* harmony export (immutable) */ __webpack_exports__["b"] = isAdult;
-
-
-// Age returns true else false
-const canDrink = (over21) => over21 >= 21;
-/* harmony export (immutable) */ __webpack_exports__["a"] = canDrink;
-
- 
-
+const subtract = (a, b) => a - b;
 
 
 
