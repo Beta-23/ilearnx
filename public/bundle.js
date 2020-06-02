@@ -78,7 +78,7 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](4));
 console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](2) + __WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](3,4));
 
 console.log(__WEBPACK_IMPORTED_MODULE_1__person__["b" /* isAdult */](19));
-console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* canDrink */](22));
+console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* canDrink */](20));
 
 /***/ }),
 /* 1 */

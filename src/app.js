@@ -5,4 +5,4 @@ console.log(square(4));
 console.log(square(2) + add(3,4));
 
 console.log(isAdult(19));
-console.log(canDrink(22));
+console.log(canDrink(20));
