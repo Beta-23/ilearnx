@@ -1,8 +1,23 @@
-import { square, add } from './utils';
-import { isAdult, canDrink } from './person';
+// import subtract, { square, add } from './utils';
+// import isSenior, { isAdult, canDrink } from './person';
 
-console.log(square(4));
-console.log(square(2) + add(3,4));
+// Testing utils
+// console.log(square(4));
+// console.log(square(2) + add(3,4));
+// console.log(subtract(100, 20));
 
-console.log(isAdult(19));
-console.log(canDrink(20));
+// Testing person utils
+// console.log(isAdult(14));
+// console.log(canDrink(23));
+// console.log(isSenior(64));
+
+// import validator from 'validator';
+
+// console.log(validator.isEmail('test@gmail.com'));
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const template = <p>This is JXS from webpack!</p>;
+ReactDOM.render(template, document.getElementById('app'));
+
