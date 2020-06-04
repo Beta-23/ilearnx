@@ -530,6 +530,10 @@ var _Option = __webpack_require__(42);
 
 var _Option2 = _interopRequireDefault(_Option);
 
+var _Header = __webpack_require__(43);
+
+var _Header2 = _interopRequireDefault(_Header);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -643,7 +647,7 @@ var IlearnxApp = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(Header, { subtitle: subtitle }),
+                _react2.default.createElement(_Header2.default, { subtitle: subtitle }),
                 _react2.default.createElement(Action, {
                     hasOptions: this.state.options.length > 0,
                     handlePickOptions: this.handlePickOptions
@@ -664,31 +668,10 @@ var IlearnxApp = function (_React$Component) {
     return IlearnxApp;
 }(_react2.default.Component);
 
-// Header stateless functional component for User
+// Action stateless functional component for User
 
 
-var Header = function Header(props) {
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'h1',
-            null,
-            props.title
-        ),
-        props.subtitle && _react2.default.createElement(
-            'h2',
-            null,
-            props.subtitle
-        )
-    );
-};
-
-Header.defaultProps = {
-    title: 'iLearnx App'
-
-    // Action stateless functional component for User
-};var Action = function Action(props) {
+var Action = function Action(props) {
     return _react2.default.createElement(
         'div',
         null,
@@ -29489,6 +29472,47 @@ var Option = function Option(props) {
 };
 
 exports.default = Option;
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Header stateless functional component for User
+var Header = function Header(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'h1',
+            null,
+            props.title
+        ),
+        props.subtitle && _react2.default.createElement(
+            'h2',
+            null,
+            props.subtitle
+        )
+    );
+};
+
+Header.defaultProps = {
+    title: 'iLearnx App'
+};
+
+exports.default = Header;
 
 /***/ })
 /******/ ]);
