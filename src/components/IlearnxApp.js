@@ -5,15 +5,22 @@ import Action from './Action';
 import Options from './Options';
 
 class IlearnxApp extends React.Component {
+    state = {
+        options: []
+    };
+
+    // Event handler implicit setState object
+    handleDeleteOptions = () => {
+        this.setState(() => ({ options: [] }));
+    }
+
     constructor(props){
         super(props);
-        this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
+        
         this.handlePickOptions=this.handlePickOptions.bind(this);
         this.handleAddOption=this.handleAddOption.bind(this);
         this.handleDeleteIndividualOption=this.handleDeleteIndividualOption.bind(this);
-        this.state = {
-            options: []
-        };
+       
     }
     // Lifecycle methods
     componentDidMount() {
@@ -43,10 +50,7 @@ class IlearnxApp extends React.Component {
         console.log('App WillUnmount!');
     }
 
-    // Event handler implicit setState object
-    handleDeleteOptions() {
-        this.setState(() => ({ options: [] }));
-    }
+    
 
     handleDeleteIndividualOption(optionToRemove) {
         this.setState((prevState) => ({
