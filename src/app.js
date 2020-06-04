@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import AddOption from './components/AddOption';
 import Option from './components/Option';
 import Header from './components/Header';
+import Action from './components/Action';
 
 class IlearnxApp extends React.Component {
     constructor(props){
@@ -94,20 +95,6 @@ class IlearnxApp extends React.Component {
             </div>
         );
     }
-}
-
-// Action stateless functional component for User
-const Action = (props) => {
-    return (
-        <div>
-            <button 
-                onClick={props.handlePickOptions}
-                disabled={!props.hasOptions}
-                >
-                What langueage should I learn?
-            </button>
-        </div>
-    );
 }
 
 // Options stateless functional component for User
