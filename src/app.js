@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AddOption from './components/AddOption';
+import Option from './components/Option';
 
 class IlearnxApp extends React.Component {
     constructor(props){
@@ -148,24 +149,6 @@ const Options = (props) => {
         </div>
     ); 
 }
-
-// Option stateless functional component for User
-const Option = (props) => {
-    return (
-        <div>
-            {props.optionText}
-            <button 
-                onClick={(e) => {
-                props.handleDeleteIndividualOption(props.optionText)
-            }}
-            >
-            Remove Item
-            </button>
-        </div>
-    );
-}
-
-
 
 ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
 
