@@ -14,6 +14,13 @@ class IlearnxApp extends React.Component {
         this.setState(() => ({ options: [] }));
     }
 
+    // Event handler
+    handlePickOptions = () => {
+        const randomNum = Math.floor(Math.random() * this.state.options.length);
+        const option = this.state.options[randomNum];
+        return alert(`Our pick is: ${option}`)
+    }
+
     constructor(props){
         super(props);
         
@@ -57,12 +64,7 @@ class IlearnxApp extends React.Component {
             options: prevState.options.filter((option) => optionToRemove !== option)
         }));
     }
-    // Event handler
-    handlePickOptions() {
-            const randomNum = Math.floor(Math.random() * this.state.options.length);
-            const option = this.state.options[randomNum];
-            return alert(`Our pick is: ${option}`)
-    }
+    
     // Event handler from child
     handleAddOption(option) {
         if (!option) {
