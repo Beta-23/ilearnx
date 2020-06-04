@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AddOption from './components/AddOption';
-import Option from './components/Option';
 import Header from './components/Header';
 import Action from './components/Action';
+import Options from './components/Options';
 
 class IlearnxApp extends React.Component {
     constructor(props){
@@ -95,34 +95,7 @@ class IlearnxApp extends React.Component {
             </div>
         );
     }
-}
-
-// Options stateless functional component for User
-const Options = (props) => {
-    return (
-        <div>
-            <p>{props.options.length > 0 ? 'Here Are Your Options:' : 'No Options!'}</p>
-            {
-                props.options.map((option) => (
-                    <Option 
-                     key={option} 
-                     optionText={option} 
-                     handleDeleteIndividualOption={props.handleDeleteIndividualOption}
-                    />
-                ))
-            } 
-            <br />
-            <button 
-                disabled={props.options.length === 0} 
-                onClick={props.handleDeleteOptions}
-                >
-                Remove All
-            </button>
-            { props.options.length === 0 && 
-            <p>Please Add Your Langueage Choice to get Started!</p> }
-        </div>
-    ); 
-}
+};
 
 ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
 
