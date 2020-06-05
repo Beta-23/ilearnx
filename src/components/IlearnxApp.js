@@ -41,13 +41,6 @@ class IlearnxApp extends React.Component {
         }));
     }
 
-    constructor(props){
-        super(props);
-        
-        this.handleAddOption=this.handleAddOption.bind(this);
-        
-       
-    }
     // Lifecycle methods
     componentDidMount() {
         try {
@@ -63,6 +56,7 @@ class IlearnxApp extends React.Component {
         }   
     }
 
+    // Lifecycle methods
     componentDidUpdate(prevProps, prevState) {
         if (prevState.options.length !== this.state.options.length) {
             const json = JSON.stringify(this.state.options);
@@ -72,13 +66,13 @@ class IlearnxApp extends React.Component {
         
     }
 
+    // Lifecycle methods
     componentWillUnmount() {
         console.log('App WillUnmount!');
     }
 
     render() {
         const subtitle = 'Let an al·go·rithm show your learning path!';
-
         return (
             <div>
                 <Header subtitle={subtitle}/>
