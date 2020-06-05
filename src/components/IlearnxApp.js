@@ -21,12 +21,31 @@ class IlearnxApp extends React.Component {
         return alert(`Our pick is: ${option}`)
     }
 
+    // Event handler from child
+     handleAddOption = (option) => {
+        if (!option) {
+            return 'Enter a valid value for language choice!';
+        } else if (this.state.options.indexOf(option) > -1) {
+            return alert('This language is already in you choices!');
+        } 
+
+        this.setState((prevState) => ({ 
+            options: prevState.options.concat(option) 
+        }));
+    }
+
+    // Event handler
+    handleDeleteIndividualOption = (optionToRemove) => {
+        this.setState((prevState) => ({
+            options: prevState.options.filter((option) => optionToRemove !== option)
+        }));
+    }
+
     constructor(props){
         super(props);
         
-        this.handlePickOptions=this.handlePickOptions.bind(this);
         this.handleAddOption=this.handleAddOption.bind(this);
-        this.handleDeleteIndividualOption=this.handleDeleteIndividualOption.bind(this);
+        
        
     }
     // Lifecycle methods
@@ -55,27 +74,6 @@ class IlearnxApp extends React.Component {
 
     componentWillUnmount() {
         console.log('App WillUnmount!');
-    }
-
-    
-
-    handleDeleteIndividualOption(optionToRemove) {
-        this.setState((prevState) => ({
-            options: prevState.options.filter((option) => optionToRemove !== option)
-        }));
-    }
-    
-    // Event handler from child
-    handleAddOption(option) {
-        if (!option) {
-            return 'Enter a valid value for language choice!';
-        } else if (this.state.options.indexOf(option) > -1) {
-            return alert('This language is already in you choices!');
-        } 
-
-        this.setState((prevState) => ({ 
-            options: prevState.options.concat(option) 
-        }));
     }
 
     render() {
