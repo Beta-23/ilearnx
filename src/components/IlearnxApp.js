@@ -5,16 +5,42 @@ import Action from './Action';
 import Options from './Options';
 
 class IlearnxApp extends React.Component {
-    constructor(props){
-        super(props);
-        this.handleDeleteOptions=this.handleDeleteOptions.bind(this);
-        this.handlePickOptions=this.handlePickOptions.bind(this);
-        this.handleAddOption=this.handleAddOption.bind(this);
-        this.handleDeleteIndividualOption=this.handleDeleteIndividualOption.bind(this);
-        this.state = {
-            options: []
-        };
-    }
+    state = {
+        options: []
+    };
+
+    // Event handler implicit setState object
+    handleDeleteOptions = () => {
+        this.setState(() => ({ options: [] }));
+    };
+
+    // Event handler
+    handlePickOptions = () => {
+        const randomNum = Math.floor(Math.random() * this.state.options.length);
+        const option = this.state.options[randomNum];
+        return alert(`Our pick is: ${option}`)
+    };
+
+    // Event handler from child
+     handleAddOption = (option) => {
+        if (!option) {
+            return 'Enter a valid value for language choice!';
+        } else if (this.state.options.indexOf(option) > -1) {
+            return alert('This language is already in you choices!');
+        } 
+
+        this.setState((prevState) => ({ 
+            options: prevState.options.concat(option) 
+        }));
+    };
+
+    // Event handler
+    handleDeleteIndividualOption = (optionToRemove) => {
+        this.setState((prevState) => ({
+            options: prevState.options.filter((option) => optionToRemove !== option)
+        }));
+    };
+
     // Lifecycle methods
     componentDidMount() {
         try {
@@ -28,8 +54,9 @@ class IlearnxApp extends React.Component {
             } catch (e) {
                 // Do nothing at all  
         }   
-    }
+    };
 
+    // Lifecycle methods
     componentDidUpdate(prevProps, prevState) {
         if (prevState.options.length !== this.state.options.length) {
             const json = JSON.stringify(this.state.options);
@@ -37,44 +64,15 @@ class IlearnxApp extends React.Component {
             console.log('Saving Data to Local Storage!');
         }
         
-    }
+    };
 
+    // Lifecycle methods
     componentWillUnmount() {
         console.log('App WillUnmount!');
-    }
-
-    // Event handler implicit setState object
-    handleDeleteOptions() {
-        this.setState(() => ({ options: [] }));
-    }
-
-    handleDeleteIndividualOption(optionToRemove) {
-        this.setState((prevState) => ({
-            options: prevState.options.filter((option) => optionToRemove !== option)
-        }));
-    }
-    // Event handler
-    handlePickOptions() {
-            const randomNum = Math.floor(Math.random() * this.state.options.length);
-            const option = this.state.options[randomNum];
-            return alert(`Our pick is: ${option}`)
-    }
-    // Event handler from child
-    handleAddOption(option) {
-        if (!option) {
-            return 'Enter a valid value for language choice!';
-        } else if (this.state.options.indexOf(option) > -1) {
-            return alert('This language is already in you choices!');
-        } 
-
-        this.setState((prevState) => ({ 
-            options: prevState.options.concat(option) 
-        }));
-    }
+    };
 
     render() {
         const subtitle = 'Let an al·go·rithm show your learning path!';
-
         return (
             <div>
                 <Header subtitle={subtitle}/>

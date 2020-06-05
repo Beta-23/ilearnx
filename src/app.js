@@ -4,5 +4,3 @@ import IlearnxApp from './components/IlearnxApp';
 
 ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
 
-
-
