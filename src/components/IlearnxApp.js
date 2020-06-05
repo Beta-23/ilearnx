@@ -12,14 +12,14 @@ class IlearnxApp extends React.Component {
     // Event handler implicit setState object
     handleDeleteOptions = () => {
         this.setState(() => ({ options: [] }));
-    }
+    };
 
     // Event handler
     handlePickOptions = () => {
         const randomNum = Math.floor(Math.random() * this.state.options.length);
         const option = this.state.options[randomNum];
         return alert(`Our pick is: ${option}`)
-    }
+    };
 
     // Event handler from child
      handleAddOption = (option) => {
@@ -32,14 +32,14 @@ class IlearnxApp extends React.Component {
         this.setState((prevState) => ({ 
             options: prevState.options.concat(option) 
         }));
-    }
+    };
 
     // Event handler
     handleDeleteIndividualOption = (optionToRemove) => {
         this.setState((prevState) => ({
             options: prevState.options.filter((option) => optionToRemove !== option)
         }));
-    }
+    };
 
     // Lifecycle methods
     componentDidMount() {
@@ -54,7 +54,7 @@ class IlearnxApp extends React.Component {
             } catch (e) {
                 // Do nothing at all  
         }   
-    }
+    };
 
     // Lifecycle methods
     componentDidUpdate(prevProps, prevState) {
@@ -64,12 +64,12 @@ class IlearnxApp extends React.Component {
             console.log('Saving Data to Local Storage!');
         }
         
-    }
+    };
 
     // Lifecycle methods
     componentWillUnmount() {
         console.log('App WillUnmount!');
-    }
+    };
 
     render() {
         const subtitle = 'Let an al·go·rithm show your learning path!';
