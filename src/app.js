@@ -1,6 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import IlearnxApp from './components/IlearnxApp';
+// import IlearnxApp from './components/IlearnxApp';
 
-ReactDOM.render(<IlearnxApp />, document.getElementById('app'));
+const Layout = () => {
+    return (
+        <div>
+            <p>Header</p>
+            <p>Footer</p>
+        </div>
+    ); 
+};
+
+ReactDOM.render(<Layout />, document.getElementById('app'));
+
+
 
