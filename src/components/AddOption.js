@@ -15,18 +15,18 @@ class AddOption extends React.Component {
         if (!error) {
             e.target.elements.option.value = '';
         }
-    }
+    };
     render() {
         return (
             <div>
-                { this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.handleAddOption}>
+                { this.state.error && <p>{ this.state.error }</p> }
+                <form onSubmit={ this.handleAddOption }>
                 <input type="text" name="option" />
                 <button>Add Your Langueage</button>
                 </form>   
             </div>
         );
     }
-}
+};
 
 export default AddOption;
