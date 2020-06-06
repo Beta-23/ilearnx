@@ -2,11 +2,10 @@ import React from 'react';
 
 import Modal from 'react-modal';
 
-const OptionModal = () => {
-    return (
-        <div>
-            modal text here
-        </div>
-    )
-};
+const OptionModal = () => (
+    <div>
+        modal text here
+    </div>
+);
 
+export default OptionModal;
