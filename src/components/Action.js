@@ -1,8 +1,7 @@
 import React from 'react';
 
 // Action stateless functional component for User
-const Action = (props) => {
-    return (
+const Action = (props) => (
         <div>
             <button 
                 onClick={props.handlePickOptions}
@@ -11,7 +10,6 @@ const Action = (props) => {
                 What langueage should I learn?
             </button>
         </div>
-    );
-};
+);
 
 export default Action;
