@@ -7,7 +7,8 @@ import OptionModal from './OptionModal';
 
 class IlearnxApp extends React.Component {
     state = {
-        options: []
+        options: [],
+        selectedOption: undefined
     };
 
     // Event handler implicit setState object
@@ -19,7 +20,9 @@ class IlearnxApp extends React.Component {
     handlePickOptions = () => {
         const randomNum = Math.floor(Math.random() * this.state.options.length);
         const option = this.state.options[randomNum];
-        return alert(`Our pick is: ${option}`)
+        this.setState(() => ({
+            selectedOption: option
+        }));
     };
 
     // Event handler from child
@@ -90,7 +93,9 @@ class IlearnxApp extends React.Component {
                 <AddOption
                     handleAddOption={this.handleAddOption}
                 />
-                <OptionModal />
+                <OptionModal 
+                    selectedOption={ this.state.selectedOption }
+                />
             </div>
         );
     }
