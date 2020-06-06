@@ -45,6 +45,11 @@ class IlearnxApp extends React.Component {
         }));
     };
 
+    // Event handler implicit setState object
+    handleClearSelectedOption = () => {
+        this.setState(() => ({ selectedOption: undefined }));
+    };
+
     // Lifecycle methods
     componentDidMount() {
         try {
@@ -82,19 +87,20 @@ class IlearnxApp extends React.Component {
                 <Header subtitle={subtitle}/>
                 <Action 
                 hasOptions={ this.state.options.length > 0 } 
-                handlePickOptions={this.handlePickOptions}
+                handlePickOptions={ this.handlePickOptions }
                 />
                 <Options 
-                    options={this.state.options} 
-                    handleDeleteOptions={this.handleDeleteOptions}
-                    handleDeleteIndividualOption={this.handleDeleteIndividualOption}
+                    options={ this.state.options } 
+                    handleDeleteOptions={ this.handleDeleteOptions} 
+                    handleDeleteIndividualOption={ this.handleDeleteIndividualOption }
                 />
                 <br />
                 <AddOption
-                    handleAddOption={this.handleAddOption}
+                    handleAddOption={ this.handleAddOption }
                 />
                 <OptionModal 
                     selectedOption={ this.state.selectedOption }
+                    handleClearSelectedOption= { this.handleClearSelectedOption }
                 />
             </div>
         );
