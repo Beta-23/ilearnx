@@ -1,3 +1,4 @@
+// Big Button
 .big-button {
     background: $brand-purple;
     border: none;
@@ -12,4 +13,22 @@
 
 .big-button:disabled {
     opacity: .5;
+}
+
+// Buttons
+
+.button {
+    background-color: $brand-purple;
+    border: none;
+    border-bottom: .3rem solid darken($brand-purple, 10%);
+    color: white;
+    font-weight: 500;
+    padding: $s-size;
+}
+
+.button--link {
+    background: none;
+    border: none;
+    color: $brand-offset;
+    padding: 0;
 }
