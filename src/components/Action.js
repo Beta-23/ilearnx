@@ -3,7 +3,8 @@ import React from 'react';
 // Action stateless functional component for User
 const Action = (props) => (
         <div>
-            <button 
+            <button
+                className="big-button" 
                 onClick={props.handlePickOptions}
                 disabled={!props.hasOptions}
                 >
