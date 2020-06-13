@@ -1,4 +1,18 @@
+// Widget
+.widget {
+    background: $widget-light-blue;
+    margin-bottom: $xl-size;
+}
+
 // Widget Header
 .widget-header {
     background: $widget-blue;
+    color: $brand-offset;
+    display: flex;
+    justify-content: space-between;
+    padding: $m-size;
+}
+
+.widget-header__title {
+    margin: 0;
 }

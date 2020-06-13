@@ -92,15 +92,18 @@ class IlearnxApp extends React.Component {
                         hasOptions={ this.state.options.length > 0 } 
                         handlePickOptions={ this.handlePickOptions }
                         />
-                        <Options 
-                            options={ this.state.options } 
-                            handleDeleteOptions={ this.handleDeleteOptions} 
-                            handleDeleteIndividualOption={ this.handleDeleteIndividualOption }
-                        />
-                        <br />
-                        <AddOption
-                            handleAddOption={ this.handleAddOption }
-                        />
+
+                        <div className="widget">
+                            <Options 
+                                options={ this.state.options } 
+                                handleDeleteOptions={ this.handleDeleteOptions} 
+                                handleDeleteIndividualOption={ this.handleDeleteIndividualOption }
+                            />
+                            <br />
+                            <AddOption
+                                handleAddOption={ this.handleAddOption }
+                            />
+                        </div>
                     </div>
                 <OptionModal 
                     selectedOption={ this.state.selectedOption }
