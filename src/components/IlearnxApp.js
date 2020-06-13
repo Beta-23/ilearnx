@@ -1,10 +1,11 @@
 import React from 'react';
-import AddOption from './AddOption';
-import Header from './Header';
 import Action from './Action';
+import AddOption from './AddOption';
+import Footer from './Footer';
+import Header from './Header';
 import Options from './Options';
 import OptionModal from './OptionModal';
-import Footer from './Footer';
+
 
 class IlearnxApp extends React.Component {
     state = {
