@@ -15,6 +15,8 @@ const Options = (props) => (
                     />
                 ))
             } 
+            <div className="widget-header">
+            <h3>Your Selections</h3>
             <br />
             <button
                 className="button button--link" 
@@ -23,6 +25,7 @@ const Options = (props) => (
                 >
                 Remove All
             </button>
+            </div>
             { props.options.length === 0 && 
             <p>Please Add Your Langueage Choice to get Started!</p> }
         </div>

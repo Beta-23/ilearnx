@@ -4,10 +4,10 @@
     display: flex;
     justify-content: center;
     background-color: $brand-color;
-    border-top: $xs-size solid darken($color-white-transparent, 10%);
-    border-bottom: $xs-size solid darken($brand-offset, 10%);
+    border-top: $xs-size solid darken($color-white-transparent, 15%);
+    border-bottom: $xs-size solid darken($brand-offset, 15%);
     padding: 2rem 0;
-    margin-top: 16rem;   
+    margin-top: 15.3rem;   
 }
 
 a {
