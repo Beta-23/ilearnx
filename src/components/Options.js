@@ -15,14 +15,17 @@ const Options = (props) => (
                     />
                 ))
             } 
-            <br />
-            <button
-                className="button button--link" 
-                disabled={ props.options.length === 0 } 
-                onClick={ props.handleDeleteOptions }
-                >
-                Remove All
-            </button>
+            <div className="widget-header">
+                <h3 className="widget-header__title">Your Selections:</h3>
+                <br />
+                <button
+                    className="button button--link" 
+                    disabled={ props.options.length === 0 } 
+                    onClick={ props.handleDeleteOptions }
+                    >
+                    Remove All
+                </button>
+            </div>
             { props.options.length === 0 && 
             <p>Please Add Your Langueage Choice to get Started!</p> }
         </div>
