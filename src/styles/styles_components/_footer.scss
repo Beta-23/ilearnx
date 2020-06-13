@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     background-color: $brand-color;
-    border-top: 0.1875rem solid darken($color-white-transparent, 15%);
-    border-bottom: 0.1875rem solid darken($brand-offset, 15%);
+    border-top: $border-3px-size solid darken($color-white-transparent, 15%);
+    border-bottom: $border-3px-size solid darken($brand-offset, 15%);
     padding: 2rem 0;
     margin-top: 15.3rem;   
 }
