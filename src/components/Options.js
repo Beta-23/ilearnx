@@ -16,7 +16,8 @@ const Options = (props) => (
                 ))
             } 
             <br />
-            <button 
+            <button
+                className="button button--link" 
                 disabled={ props.options.length === 0 } 
                 onClick={ props.handleDeleteOptions }
                 >
