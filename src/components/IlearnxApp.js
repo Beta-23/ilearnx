@@ -1,9 +1,11 @@
 import React from 'react';
-import AddOption from './AddOption';
-import Header from './Header';
 import Action from './Action';
+import AddOption from './AddOption';
+import Footer from './Footer';
+import Header from './Header';
 import Options from './Options';
 import OptionModal from './OptionModal';
+
 
 class IlearnxApp extends React.Component {
     state = {
@@ -104,8 +106,9 @@ class IlearnxApp extends React.Component {
                     selectedOption={ this.state.selectedOption }
                     handleClearSelectedOption= { this.handleClearSelectedOption }
                 />
+                <Footer />
             </div>
-        );
+        ); 
     }
 };
 

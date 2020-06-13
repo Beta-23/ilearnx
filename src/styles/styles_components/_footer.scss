@@ -1,0 +1,16 @@
+.footer {
+    font-size: $s-size;
+    color: $color-white-transparent;
+    display: flex;
+    justify-content: center;
+    background-color: $brand-color;
+    border-top: $xs-size solid darken($color-white-transparent, 10%);
+    border-bottom: $xs-size solid darken($brand-offset, 10%);
+    padding: 2rem 0;
+    margin-top: 16rem;   
+}
+
+a {
+    color: $color-white-transparent;
+    margin-left: $xs-size;
+}
