@@ -4,10 +4,14 @@
     display: flex;
     justify-content: center;
     background-color: $brand-color;
-    border-top: $border-3px-size solid darken($color-white-transparent, 15%);
-    border-bottom: $border-3px-size solid darken($brand-offset, 15%);
+    border-top: $border-3px-size solid darken($color-white-transparent, 10%);
+    border-bottom: $border-3px-size solid darken($brand-offset, 10%);
     padding: 2rem 0;
-    margin-top: 15.3rem;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $s-size;
 }
 
 a {
