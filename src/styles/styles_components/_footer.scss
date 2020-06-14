@@ -8,8 +8,9 @@
     border-bottom: $border-3px-size solid darken($brand-offset, 10%);
     padding: 2rem 0;
 
-    position: absolute;
-    bottom: 0;
+    /* Need to fix below */
+    position: relative;
+    bottom: -135px;
     width: 100%;
     height: $s-size;
 }
