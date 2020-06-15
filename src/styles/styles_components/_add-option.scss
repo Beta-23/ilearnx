@@ -1,8 +1,26 @@
-// Add option error
+// Add  Option Error
 .add-option-error {
     color: red;
     background-color: white;
     font-style: italic;
     margin: $m-size 0 0 0;
     padding: 0 $m-size;
+}
+
+// Add Option
+.add-option {
+    display: flex;
+    padding: $m-size;
+}
+
+// Add Option Input
+.add-option__input {
+    background: $color-white-transparent;
+    border: none;
+    border-bottom: .3rem solid darken($brand-color, 10%);
+    color: black;
+    flex-grow: 1;
+    margin-right: $s-size;
+    padding: $s-size;
+
 }
