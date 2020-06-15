@@ -20,7 +20,7 @@
     background-color: $brand-offset;
     border: none;
     border-bottom: .3rem solid darken($brand-offset, 10%);
-    color:#ff3366;
+    color: $brand-color;
     font-weight: bold;
     padding: $s-size;
 }

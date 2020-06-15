@@ -5,7 +5,14 @@
     padding: $s-size $m-size;
 }
 
-.remove-item {
+.option__text {
+    color: white;
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.option__remove {
     font-size: $m-size;
     color: red;
 }
