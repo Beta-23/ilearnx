@@ -1,0 +1,11 @@
+.option {
+    border-bottom: $border-1px-size solid lighten($widget-light-blue, 10%);
+    display: flex;
+    justify-content: space-between;
+    padding: $s-size $m-size;
+}
+
+.remove-item {
+    font-size: $m-size;
+    color: red;
+}

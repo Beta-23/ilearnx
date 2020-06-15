@@ -2,7 +2,7 @@ import React from 'react';
 
 // Option stateless functional component for User
 const Option = (props) => (
-        <div>
+        <div className="option">
             { props.optionText }
             <button 
                 className="button button--link"
@@ -12,7 +12,7 @@ const Option = (props) => (
                 )
             } }
             >
-            Remove Item
+            <span className="remove-item">&#10008;</span>
             </button>
         </div>
 );
