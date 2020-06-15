@@ -2,8 +2,8 @@ import React from 'react';
 
 // Option stateless functional component for User
 const Option = (props) => (
-        <div>
-            { props.optionText }
+        <div className="option">
+            <p className="option__text">{props.count}. { props.optionText }</p>
             <button 
                 className="button button--link"
                 onClick={ (e) => {
@@ -12,7 +12,7 @@ const Option = (props) => (
                 )
             } }
             >
-            Remove Item
+            <span className="option__remove">&#10008;</span>
             </button>
         </div>
 );

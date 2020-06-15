@@ -6,7 +6,6 @@ import Header from './Header';
 import Options from './Options';
 import OptionModal from './OptionModal';
 
-
 class IlearnxApp extends React.Component {
     state = {
         options: [],
@@ -32,7 +31,7 @@ class IlearnxApp extends React.Component {
         if (!option) {
             return 'Enter a valid value for language choice!';
         } else if (this.state.options.indexOf(option) > -1) {
-            return alert('This language is already in you choices!');
+            return ('This language is already in your list of choices!');
         } 
 
         this.setState((prevState) => ({ 

@@ -2,9 +2,9 @@ import React from 'react';
 
 // Footer stateless functional component
 const Footer = (props) => (
-    <div>
+    <div className="footer">
         <div>
-            <footer className="footer">
+            <footer>
             { props.title } | Copyright&copy; 2020
                 |<a href="https://alfreddominguez.com" target="_blank">Alfred Domínguez</a>
             </footer>
