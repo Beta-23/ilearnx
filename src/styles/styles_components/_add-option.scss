@@ -16,7 +16,7 @@
 
 // Add Option Input
 .add-option__input {
-    background: #fcf8e3;
+    background: $media-breakpoint-color;
     border: none;
     border-bottom: .3rem solid darken($brand-color, 10%);
     color: black;
