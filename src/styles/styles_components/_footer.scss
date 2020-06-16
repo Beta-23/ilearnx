@@ -10,7 +10,7 @@
 
     /* Need to fix below */
     position: relative;
-    bottom: -135px;
+    margin: $l-size 0 0 0;
     width: 100%;
     height: $s-size;
 }
@@ -18,4 +18,11 @@
 a {
     color: $color-white-transparent;
     margin-left: $xs-size;
+}
+
+// Mobile divice UI settings
+@media (min-width: $desktop-breakpoint) {
+    .footer {
+        margin-bottom: $xl-size;
+    }
 }
