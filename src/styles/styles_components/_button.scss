@@ -6,7 +6,7 @@
     color: $brand-color;
     font-weight: bold;
     font-size: $l-size;
-    margin-bottom: $xl-size;
+    margin-bottom: $m-size;
     padding: 2.4rem;
     width: 100%;
 }
@@ -30,4 +30,11 @@
     border: none;
     color: $brand-offset;
     padding: 0;
+}
+
+// Mobile divice UI settings
+@media (min-width: $desktop-breakpoint) {
+    .header {
+        margin-bottom: $xl-size;
+    }
 }
