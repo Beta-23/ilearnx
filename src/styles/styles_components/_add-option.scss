@@ -10,17 +10,29 @@
 // Add Option
 .add-option {
     display: flex;
+    flex-direction: column;
     padding: $m-size;
 }
 
 // Add Option Input
 .add-option__input {
-    background: $color-white-transparent;
+    background: #fcf8e3;
     border: none;
     border-bottom: .3rem solid darken($brand-color, 10%);
     color: black;
     flex-grow: 1;
-    margin-right: $s-size;
+    margin: 0 0 $s-size 0;
     padding: $s-size;
+}
 
+// Mobile divice UI settings
+@media (min-width: 45rem) {
+    .add-option {
+        flex-direction: row;
+    }
+    .add-option__input {
+        background: $color-white-transparent;
+
+        margin: 0 $s-size 0 0;
+    }
 }
