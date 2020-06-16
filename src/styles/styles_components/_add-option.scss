@@ -26,13 +26,12 @@
 }
 
 // Mobile divice UI settings
-@media (min-width: 45rem) {
+@media (min-width: $desktop-breakpoint) {
     .add-option {
         flex-direction: row;
     }
     .add-option__input {
         background: $color-white-transparent;
-
         margin: 0 $s-size 0 0;
     }
 }
