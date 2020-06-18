@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "codingLanguage": "JavaScript",
+        "url": "https://www.freecodecamp.org/news/what-is-javascript/"
+    },
+    {
+        "id": 2,
+        "codingLanguage": "React",
+        "url": "https://www.youtube.com/watch?v=DLX62G4lc44"
+    }
+]

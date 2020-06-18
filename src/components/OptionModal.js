@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Modal from 'react-modal';
+import LangList from './LangList';
 
 const OptionModal = (props) => (
     <Modal 
@@ -20,6 +21,9 @@ const OptionModal = (props) => (
         >
         AWESOME!
         </button>
+
+        <h3>Get Started!</h3>
+        <LangList />
     </Modal>
 );
 
