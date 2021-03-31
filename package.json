@@ -32,7 +32,8 @@
     "validator": "8.0.0",
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0",
-    "websocket-extensions": "^0.1.4"
+    "websocket-extensions": "^0.1.4",
+    "y18n": "^4.0.1"
   },
   "devDependencies": {
     "webpack-cli": "^3.3.11"
