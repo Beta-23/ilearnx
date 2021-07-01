@@ -30,6 +30,7 @@
     "sass-loader": "^8.0.2",
     "ssri": "^8.0.1",
     "style-loader": "1.2.1",
+    "trim-newlines": "^3.0.1",
     "validator": "8.0.0",
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0",
